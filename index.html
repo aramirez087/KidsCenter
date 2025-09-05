@@ -372,18 +372,34 @@
         <div class="container">
             <h2 class="section-title">Nuestro Equipo</h2>
             <div class="gallery-grid gallery-grid--team">
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox('images/teacher-1.jpg', 'Profesora 1')">
                     <img src="images/teacher-1.jpg" alt="Profesora 1">
+                    <div class="gallery-overlay">
+                        <span>Ver más grande</span>
+                    </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox('images/teacher-2.jpg', 'Profesora 2')">
                     <img src="images/teacher-2.jpg" alt="Profesora 2">
+                    <div class="gallery-overlay">
+                        <span>Ver más grande</span>
+                    </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openLightbox('images/teacher-3.jpg', 'Profesora 3')">
                     <img src="images/teacher-3.jpg" alt="Profesora 3">
+                    <div class="gallery-overlay">
+                        <span>Ver más grande</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageLightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImage" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
 
     <!-- Curved Section Divider -->
     <svg class="section-divider" viewBox="0 0 1440 120" preserveAspectRatio="none">

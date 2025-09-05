@@ -14,6 +14,35 @@ hamburger?.addEventListener('click', () => {
         'rotate(-45deg) translateY(-8px)' : 'none';
 });
 
+// Lightbox functionality
+function openLightbox(imageSrc, caption) {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    
+    lightbox.classList.add('active');
+    lightboxImg.src = imageSrc;
+    lightboxCaption.textContent = caption;
+    
+    // Prevent body scroll when lightbox is open
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('imageLightbox');
+    lightbox.classList.remove('active');
+    
+    // Restore body scroll
+    document.body.style.overflow = '';
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
 // Chat button handlers
 const chatBtnHeader = document.getElementById('chatBtnHeader');
 
