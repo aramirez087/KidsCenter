@@ -46,15 +46,14 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Bienvenidos a <span class="highlight">Kids Center</span></h1>
-                    <p class="hero-subtitle">Centro de Idiomas y Estimulación del Lenguaje para Niños</p>
+                    <h1 class="hero-title">Terapia de Lenguaje y Centro de Idiomas para Niños</h1>
+                    <p class="hero-subtitle">Desarrollo integral del lenguaje con <span class="highlight">Kids Center</span></p>
                     <div class="hero-buttons">
-                        <a href="#servicios" class="btn btn-primary"><span>Conoce nuestros servicios</span></a>
-                        <a href="#contacto" class="btn btn-secondary"><span>Contáctanos</span></a>
+                        <a href="#contacto" class="btn btn-primary btn-large"><span>Agenda tu cita</span></a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/logo.jpg" alt="Kids Center Logo">
+                    <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&h=500&fit=crop" alt="Niños felices aprendiendo con terapeuta">
                 </div>
             </div>
         </div>
@@ -65,6 +64,54 @@
         <path d="M0,48 C240,96 480,0 720,48 C960,96 1200,0 1440,48 L1440,120 L0,120 Z" fill="#F7F9FC"></path>
     </svg>
 
+    <!-- Service Cards Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title">Programas por Edad</h2>
+            <div class="age-cards">
+                <div class="age-card">
+                    <div class="age-card-header">
+                        <span class="age-badge">3-5 años</span>
+                        <div class="age-icon">🧸</div>
+                    </div>
+                    <h3>Primera Infancia</h3>
+                    <ul class="benefits-list">
+                        <li>Estimulación temprana del lenguaje</li>
+                        <li>Desarrollo de habilidades sociales</li>
+                        <li>Introducción lúdica a idiomas</li>
+                    </ul>
+                    <a href="#servicios" class="card-link">Ver más →</a>
+                </div>
+                <div class="age-card featured">
+                    <div class="age-card-header">
+                        <span class="age-badge">6-9 años</span>
+                        <div class="age-icon">📚</div>
+                    </div>
+                    <h3>Edad Escolar</h3>
+                    <ul class="benefits-list">
+                        <li>Refuerzo académico personalizado</li>
+                        <li>Terapia de lenguaje especializada</li>
+                        <li>Dominio de lectoescritura</li>
+                    </ul>
+                    <a href="#servicios" class="card-link">Ver más →</a>
+                </div>
+                <div class="age-card">
+                    <div class="age-card-header">
+                        <span class="age-badge">10-12 años</span>
+                        <div class="age-icon">🎯</div>
+                    </div>
+                    <h3>Pre-adolescencia</h3>
+                    <ul class="benefits-list">
+                        <li>Técnicas avanzadas de estudio</li>
+                        <li>Preparación para secundaria</li>
+                        <li>Certificación en idiomas</li>
+                    </ul>
+                    <a href="#servicios" class="card-link">Ver más →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="nosotros" class="about">
         <div class="diagonal-bg"></div>
@@ -72,6 +119,9 @@
             <h2 class="section-title">Quiénes Somos</h2>
             <div class="about-grid">
                 <div class="about-content">
+                    <div class="about-logo-container">
+                        <img src="images/logo.jpg" alt="Kids Center Logo" class="about-logo">
+                    </div>
                     <p class="lead">En Kids Center nos especializamos en brindar educación personalizada y estimulación del lenguaje para niños, adaptándonos a las necesidades individuales de cada estudiante.</p>
                     <p>Nuestro enfoque integral combina metodologías innovadoras con recursos diversos para garantizar el mejor desarrollo lingüístico y académico de los niños.</p>
                     <div class="social-link">
@@ -317,7 +367,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>Kids Center</h3>
+                    <img src="images/logo.jpg" alt="Kids Center" class="footer-logo">
                     <p>Centro de Idiomas y Estimulación del Lenguaje</p>
                 </div>
                 <div class="footer-links">
@@ -349,11 +399,24 @@
         </div>
     </footer>
 
-    <!-- Floating CTA Button -->
-    <a href="#contacto" class="floating-cta" aria-label="Agenda tu cita ahora">
-        <span class="floating-cta-text">Agenda tu cita</span>
-        <span class="floating-cta-icon">📅</span>
-    </a>
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <button class="mobile-nav-btn" id="mobileChat" aria-label="Abrir chat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Chat</span>
+        </button>
+        <a href="#contacto" class="mobile-nav-btn mobile-nav-primary" aria-label="Agendar cita">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Agendar</span>
+        </a>
+    </div>
 
     <!-- n8n Chat Widget -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />

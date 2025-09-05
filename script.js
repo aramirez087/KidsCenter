@@ -14,6 +14,54 @@ hamburger?.addEventListener('click', () => {
         'rotate(-45deg) translateY(-8px)' : 'none';
 });
 
+// Chat button handlers
+const chatBtnHeader = document.getElementById('chatBtnHeader');
+const mobileChat = document.getElementById('mobileChat');
+
+// Function to open n8n chat
+function openChat() {
+    // Try multiple selectors for the n8n chat widget
+    const chatLauncher = document.querySelector('.n8n-chat__launcher') || 
+                        document.querySelector('[data-n8n-chat]') ||
+                        document.querySelector('.n8n-chat__toggle');
+    
+    if (chatLauncher) {
+        chatLauncher.click();
+    } else {
+        // If chat widget not ready, wait and try again
+        setTimeout(() => {
+            const retryLauncher = document.querySelector('.n8n-chat__launcher') || 
+                                 document.querySelector('[data-n8n-chat]') ||
+                                 document.querySelector('.n8n-chat__toggle');
+            if (retryLauncher) {
+                retryLauncher.click();
+            } else {
+                console.log('Chat widget not available yet. Please try again.');
+            }
+        }, 500);
+    }
+}
+
+// Add click handlers to chat buttons
+chatBtnHeader?.addEventListener('click', openChat);
+mobileChat?.addEventListener('click', openChat);
+
+// Also add listener for when n8n chat is fully loaded
+window.addEventListener('load', () => {
+    // Re-attach handlers after a delay to ensure n8n is loaded
+    setTimeout(() => {
+        const header = document.getElementById('chatBtnHeader');
+        const mobile = document.getElementById('mobileChat');
+        
+        if (header) {
+            header.onclick = openChat;
+        }
+        if (mobile) {
+            mobile.onclick = openChat;
+        }
+    }, 2000);
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
