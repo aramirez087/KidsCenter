@@ -255,6 +255,61 @@ function animateValue(element, start, end, duration) {
     }, 16);
 }
 
+// Testimonials Carousel
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const dots = document.querySelectorAll('.dot');
+let currentTestimonial = 0;
+
+function showTestimonial(index) {
+    testimonialCards.forEach((card, i) => {
+        card.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+}
+
+// Auto-rotate testimonials
+if (testimonialCards.length > 0) {
+    setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+        showTestimonial(currentTestimonial);
+    }, 5000);
+}
+
+// Manual navigation for testimonials
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentTestimonial = index;
+        showTestimonial(currentTestimonial);
+    });
+});
+
+// FAQ Accordion
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('.faq-icon');
+        const isActive = question.classList.contains('active');
+        
+        // Close all other FAQs
+        faqQuestions.forEach(q => {
+            if (q !== question) {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+                q.querySelector('.faq-icon').textContent = '▶';
+            }
+        });
+        
+        // Toggle current FAQ
+        question.classList.toggle('active');
+        answer.classList.toggle('active');
+        icon.textContent = isActive ? '▶' : '▼';
+    });
+});
+
 // Loading animation
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
