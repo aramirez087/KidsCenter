@@ -16,7 +16,6 @@ hamburger?.addEventListener('click', () => {
 
 // Chat button handlers
 const chatBtnHeader = document.getElementById('chatBtnHeader');
-const mobileChat = document.getElementById('mobileChat');
 
 // Function to open n8n chat
 function openChat() {
@@ -42,22 +41,17 @@ function openChat() {
     }
 }
 
-// Add click handlers to chat buttons
+// Add click handler to header chat button if it exists
 chatBtnHeader?.addEventListener('click', openChat);
-mobileChat?.addEventListener('click', openChat);
 
 // Also add listener for when n8n chat is fully loaded
 window.addEventListener('load', () => {
-    // Re-attach handlers after a delay to ensure n8n is loaded
+    // Re-attach handler after a delay to ensure n8n is loaded
     setTimeout(() => {
         const header = document.getElementById('chatBtnHeader');
-        const mobile = document.getElementById('mobileChat');
         
         if (header) {
             header.onclick = openChat;
-        }
-        if (mobile) {
-            mobile.onclick = openChat;
         }
     }, 2000);
 });
