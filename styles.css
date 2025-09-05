@@ -783,6 +783,23 @@ html, body {
     gap: 1.5rem;
 }
 
+/* Bigger images for team section */
+.gallery-grid--team {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-grid--team .gallery-item {
+    aspect-ratio: 3/4;
+}
+
+.gallery-grid--team .gallery-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
 .gallery-item {
     position: relative;
     overflow: hidden;
@@ -1238,6 +1255,16 @@ html, body {
 @media (max-width: 768px) {
     .mobile-bottom-nav {
         display: flex;
+    }
+    
+    /* Team gallery - 2 columns on tablets */
+    .gallery-grid--team {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .gallery-grid--team .gallery-item img {
+        height: 350px;
     }
 }
 
@@ -1710,6 +1737,15 @@ textarea:focus {
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    
+    .gallery-grid--team {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .gallery-grid--team .gallery-item img {
+        height: 300px;
     }
     
     .gallery-item img {
