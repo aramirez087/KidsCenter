@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kids Center - Centro de Idiomas y Estimulación del Lenguaje</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -40,18 +43,27 @@
             <div class="shape shape-3"></div>
             <div class="shape shape-4"></div>
         </div>
-        <div class="container hero-content">
-            <h1 class="hero-title">Bienvenidos a <span class="highlight">Kids Center</span></h1>
-            <p class="hero-subtitle">Centro de Idiomas y Estimulación del Lenguaje para Niños</p>
-            <div class="hero-buttons">
-                <a href="#servicios" class="btn btn-primary">Conoce nuestros servicios</a>
-                <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
-            </div>
-            <div class="hero-image">
-                <img src="images/logo.jpg" alt="Kids Center Logo">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Bienvenidos a <span class="highlight">Kids Center</span></h1>
+                    <p class="hero-subtitle">Centro de Idiomas y Estimulación del Lenguaje para Niños</p>
+                    <div class="hero-buttons">
+                        <a href="#servicios" class="btn btn-primary"><span>Conoce nuestros servicios</span></a>
+                        <a href="#contacto" class="btn btn-secondary"><span>Contáctanos</span></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/logo.jpg" alt="Kids Center Logo">
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Curved Section Divider -->
+    <svg class="section-divider" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,48 C240,96 480,0 720,48 C960,96 1200,0 1440,48 L1440,120 L0,120 Z" fill="#F7F9FC"></path>
+    </svg>
 
     <!-- About Section -->
     <section id="nosotros" class="about">
@@ -63,7 +75,7 @@
                     <p class="lead">En Kids Center nos especializamos en brindar educación personalizada y estimulación del lenguaje para niños, adaptándonos a las necesidades individuales de cada estudiante.</p>
                     <p>Nuestro enfoque integral combina metodologías innovadoras con recursos diversos para garantizar el mejor desarrollo lingüístico y académico de los niños.</p>
                     <div class="social-link">
-                        <a href="https://www.instagram.com/kidscentercr/" target="_blank" class="instagram-btn">
+                        <a href="https://www.instagram.com/kidscentercr/" target="_blank" rel="noopener noreferrer" class="instagram-btn" aria-label="Síguenos en Instagram @kidscentercr">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
                             </svg>
@@ -123,13 +135,18 @@
         </div>
     </section>
 
+    <!-- Curved Section Divider -->
+    <svg class="section-divider section-divider--flip" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,96 C480,0 960,96 1440,0 L1440,120 L0,120 Z" fill="#F7F9FC"></path>
+    </svg>
+
     <!-- Services Section -->
     <section id="servicios" class="services">
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="service-header service-header--violet">
                         <div class="service-icon">📚</div>
                     </div>
                     <div class="service-content">
@@ -138,7 +155,7 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="service-header service-header--pink">
                         <div class="service-icon">🌍</div>
                     </div>
                     <div class="service-content">
@@ -152,7 +169,7 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="service-header service-header--blue">
                         <div class="service-icon">💬</div>
                     </div>
                     <div class="service-content">
@@ -161,7 +178,7 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-header" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="service-header service-header--green">
                         <div class="service-icon">✍️</div>
                     </div>
                     <div class="service-content">
@@ -170,7 +187,7 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="service-header service-header--coral">
                         <div class="service-icon">🎯</div>
                     </div>
                     <div class="service-content">
@@ -202,6 +219,18 @@
             </div>
         </div>
     </section>
+
+    <!-- Curved Section Divider -->
+    <svg class="section-divider" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,0 L1440,0 L1440,48 C1200,96 960,0 720,48 C480,96 240,0 0,48 Z" fill="url(#gradient-divider)"></path>
+        <defs>
+            <linearGradient id="gradient-divider" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#6C63FF" />
+                <stop offset="50%" style="stop-color:#FF5E78" />
+                <stop offset="100%" style="stop-color:#FFB347" />
+            </linearGradient>
+        </defs>
+    </svg>
 
     <!-- Contact Section -->
     <section id="contacto" class="contact">
@@ -307,7 +336,7 @@
                 </div>
                 <div class="footer-social">
                     <h4>Síguenos</h4>
-                    <a href="https://www.instagram.com/kidscentercr/" target="_blank" class="social-icon">
+                    <a href="https://www.instagram.com/kidscentercr/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Síguenos en Instagram" title="Instagram">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
                         </svg>
@@ -319,6 +348,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating CTA Button -->
+    <a href="#contacto" class="floating-cta" aria-label="Agenda tu cita ahora">
+        <span class="floating-cta-text">Agenda tu cita</span>
+        <span class="floating-cta-icon">📅</span>
+    </a>
 
     <!-- n8n Chat Widget -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
