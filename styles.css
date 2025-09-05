@@ -71,45 +71,21 @@ html, body {
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 15px;
 }
 
-.logo {
-    display: flex;
-    gap: 5px;
-    animation: rotate 20s linear infinite;
+.nav-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.logo-shape {
-    width: 20px;
-    height: 20px;
-}
-
-.logo-shape.circle {
-    background: var(--primary-pink);
-    border-radius: 50%;
-}
-
-.logo-shape.triangle {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 20px solid var(--primary-yellow);
-}
-
-.logo-shape.square {
-    background: var(--primary-blue);
-}
-
-.brand-text {
-    font-size: 1.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #FF006E, #0052CC);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: contrast(1.5);
+.nav-logo:hover {
+    transform: scale(1.05);
 }
 
 .nav-menu {
