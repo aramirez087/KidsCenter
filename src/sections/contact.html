@@ -1,0 +1,74 @@
+<!-- Contact Section -->
+<section id="contacto" class="contact" aria-labelledby="contact-title">
+    <div class="container">
+        <h2 id="contact-title" class="section-title">Contacto</h2>
+        <div class="contact-grid">
+            <div class="contact-form-container">
+                <h3>Agenda una cita</h3>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="nombrePadres">Nombre de los padres</label>
+                        <input type="text" id="nombrePadres" name="nombrePadres" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreNino">Nombre del niño</label>
+                        <input type="text" id="nombreNino" name="nombreNino" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edadNino">Edad del niño</label>
+                        <input type="number" id="edadNino" name="edadNino" min="1" max="18" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                        <span class="btn-text">Enviar consulta</span>
+                        <span class="btn-loading">
+                            <svg class="spinner" width="20" height="20" viewBox="0 0 50 50">
+                                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                            </svg>
+                        </span>
+                    </button>
+                    <div id="form-message" class="form-message"></div>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Información de contacto</h3>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <h4>Dirección</h4>
+                        <p>Avenida Central 123, San José, Costa Rica</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <h4>Teléfono</h4>
+                        <p>+506 2234-5678</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@kidscenter.cr</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div>
+                        <h4>Horario</h4>
+                        <p>Lunes a Viernes: 8:00 AM - 6:00 PM<br>
+                        Sábados: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

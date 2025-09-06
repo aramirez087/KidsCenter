@@ -291,6 +291,58 @@
         <polygon points="1200,0 1250,40 1150,40" fill="var(--primary-blue)" opacity="0.3"/>
     </svg>
 
+    <!-- Modalidades Section -->
+    <section class="modalidades" aria-labelledby="modalidades-title">
+        <div class="container">
+            <h2 id="modalidades-title" class="section-title">Modalidades</h2>
+            <div class="modalidades-grid">
+                <div class="modalidad-card">
+                    <div class="modalidad-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3>Individual</h3>
+                    <p>Atención personalizada uno a uno para maximizar el progreso de cada estudiante</p>
+                </div>
+                <div class="modalidad-card">
+                    <div class="modalidad-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Grupal</h3>
+                    <p>Sesiones en grupos pequeños para fomentar la interacción y el aprendizaje colaborativo</p>
+                </div>
+                <div class="modalidad-card">
+                    <div class="modalidad-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Virtual</h3>
+                    <p>Clases en línea con la misma calidad y atención personalizada desde la comodidad del hogar</p>
+                </div>
+                <div class="modalidad-card">
+                    <div class="modalidad-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Presencial</h3>
+                    <p>Sesiones en nuestro centro educativo con ambiente especialmente diseñado para niños</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Service Cards Preview -->
     <section class="services-preview" aria-labelledby="age-programs-title">
         <div class="container">
@@ -609,22 +661,53 @@
         <div class="container">
             <h2 id="team-title" class="section-title">Nuestro Equipo</h2>
             <div class="gallery-grid gallery-grid--team">
-                <div class="gallery-item" onclick="openLightbox('images/teacher-1.jpg', 'Profesora 1')">
+                <div class="gallery-item" onclick="openLightbox('images/teacher-1.jpg', 'Michelle Puth')">
                     <img src="images/teacher-1.jpg" alt="Terapeuta de lenguaje certificada de Kids Center Costa Rica" width="300" height="400" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Ver más grande</span>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('images/teacher-2.jpg', 'Profesora 2')">
+                <div class="gallery-item" onclick="openLightbox('images/teacher-2.jpg', 'Silvia Figuls')">
                     <img src="images/teacher-2.jpg" alt="Profesora de idiomas especializada en metodología infantil" width="300" height="400" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Ver más grande</span>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('images/teacher-3.jpg', 'Profesora 3')">
+                <div class="gallery-item" onclick="openLightbox('images/teacher-3.jpg', 'Sara Hause')">
                     <img src="images/teacher-3.jpg" alt="Especialista en estimulación temprana y desarrollo infantil" width="300" height="400" loading="lazy">
                     <div class="gallery-overlay">
                         <span>Ver más grande</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestro Espacio Section -->
+    <section class="espacio" aria-labelledby="espacio-title">
+        <div class="container">
+            <h2 id="espacio-title" class="section-title">Nuestro Espacio</h2>
+            <p class="section-subtitle">Un ambiente especialmente diseñado para el aprendizaje y desarrollo infantil</p>
+            <div class="espacio-grid">
+                <div class="espacio-item" onclick="openLightbox('images/espacio-1.jpg', 'Área de Terapia de Lenguaje')">
+                    <img src="images/espacio-1.jpg" alt="Área de terapia de lenguaje - Kids Center Costa Rica" width="400" height="300" loading="lazy">
+                    <div class="espacio-overlay">
+                        <h3>Área de Terapia</h3>
+                        <p>Espacio acondicionado para sesiones de terapia de lenguaje</p>
+                    </div>
+                </div>
+                <div class="espacio-item" onclick="openLightbox('images/espacio-2.jpg', 'Salón de Clases Interactivo')">
+                    <img src="images/espacio-2.jpg" alt="Salón de clases interactivo - Kids Center Costa Rica" width="400" height="300" loading="lazy">
+                    <div class="espacio-overlay">
+                        <h3>Aulas Interactivas</h3>
+                        <p>Salones equipados con tecnología para el aprendizaje de idiomas</p>
+                    </div>
+                </div>
+                <div class="espacio-item" onclick="openLightbox('images/espacio-3.jpg', 'Área de Juegos Educativos')">
+                    <img src="images/espacio-3.jpg" alt="Área de juegos educativos - Kids Center Costa Rica" width="400" height="300" loading="lazy">
+                    <div class="espacio-overlay">
+                        <h3>Zona de Juegos</h3>
+                        <p>Espacio lúdico para estimulación temprana y desarrollo motriz</p>
                     </div>
                 </div>
             </div>

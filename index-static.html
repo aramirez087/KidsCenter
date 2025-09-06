@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Center Costa Rica | Terapia de Lenguaje, Idiomas y Refuerzo Académico para Niños</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kids Center Costa Rica: Centro especializado en terapia de lenguaje, enseñanza de idiomas (inglés, alemán, portugués), refuerzo académico y estimulación temprana para niños de 0-12 años en San José.">
+    <meta name="keywords" content="terapia de lenguaje costa rica, terapeuta del habla niños, estimulación temprana, clases de inglés niños, alemán para niños, portugués niños, refuerzo escolar san josé, kids center cr, centro de idiomas infantil, lectoescritura niños">
+    <meta name="author" content="Kids Center Costa Rica">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="CR-SJ">
+    <meta name="geo.placename" content="San José">
+    <meta name="geo.position" content="9.9281;-84.0907">
+    <meta name="ICBM" content="9.9281, -84.0907">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kids Center Costa Rica | Terapia de Lenguaje y Centro de Idiomas">
+    <meta property="og:description" content="Centro especializado en terapia de lenguaje, idiomas y refuerzo académico para niños. Evaluación gratuita. Atención personalizada desde los 6 meses hasta 12 años.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kidscenter.cr">
+    <meta property="og:image" content="https://kidscenter.cr/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_CR">
+    <meta property="og:site_name" content="Kids Center Costa Rica">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Center Costa Rica | Terapia de Lenguaje y Centro de Idiomas">
+    <meta name="twitter:description" content="Centro especializado en terapia de lenguaje, idiomas y refuerzo académico para niños en San José, Costa Rica.">
+    <meta name="twitter:image" content="https://kidscenter.cr/images/og-image.jpg">
+    <meta name="twitter:site" content="@kidscentercr">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kidscenter.cr">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Content will be loaded dynamically via JavaScript -->
+    <div id="app">
+        <!-- Loading indicator -->
+        <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Poppins', sans-serif;">
+            <div style="text-align: center;">
+                <div style="width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #FF6B9D; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+                <p style="margin-top: 20px; color: #666;">Cargando Kids Center...</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- Main loader script -->
+    <script>
+        // Component loader for GitHub Pages
+        (async function() {
+            const app = document.getElementById('app');
+            
+            // HTML content sections
+            const htmlSections = {
+                navigation: `<!-- Navigation --><nav class="navbar"><div class="container"><div class="nav-brand"><img src="images/logo.jpg" alt="Kids Center Costa Rica - Centro de Idiomas y Terapia de Lenguaje" class="nav-logo" width="120" height="60" loading="eager"></div><ul class="nav-menu"><li><a href="#inicio">Inicio</a></li><li><a href="#nosotros">Quiénes Somos</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#contacto">Contacto</a></li></ul><div class="hamburger"><span></span><span></span><span></span></div></div></nav>`,
+                hero: `<!-- Hero Section --><header id="inicio" class="hero" role="banner"><div class="geometric-bg"><div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div><div class="shape shape-4"></div></div><div class="container"><div class="hero-content"><div class="hero-text"><h1 class="hero-title">Ayudamos a tu Hijo a Comunicarse con Confianza</h1><p class="hero-subtitle">Servicio 100% personalizado adaptado a las necesidades individuales de cada estudiante de <span class="highlight">Kids Center</span></p><div class="hero-buttons"><a href="#contacto" class="btn btn-cta-secondary btn-large"><span>Agendar Cita</span></a></div></div><div class="hero-image"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=500&fit=crop" alt="Niña feliz en sesión de terapia de lenguaje en Kids Center Costa Rica" width="600" height="500" loading="eager"></div></div></div></header>`
+            };
+            
+            // Clear loading indicator and build page
+            app.innerHTML = '';
+            
+            // Add navigation
+            app.insertAdjacentHTML('beforeend', htmlSections.navigation);
+            
+            // Add hero
+            app.insertAdjacentHTML('beforeend', htmlSections.hero);
+            
+            // Load remaining sections from original index.html
+            // For GitHub Pages, we'll need to include all sections inline or load from the original file
+            try {
+                const response = await fetch('index.html');
+                if (response.ok) {
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    // Extract sections after hero
+                    const sections = [
+                        '.services-preview',
+                        '#nosotros',
+                        '.features',
+                        '#servicios',
+                        '.testimonials',
+                        '.urgency-banner',
+                        '.faq',
+                        '.gallery',
+                        '#contacto',
+                        '.footer',
+                        '.mobile-bottom-nav'
+                    ];
+                    
+                    sections.forEach(selector => {
+                        const element = doc.querySelector(selector);
+                        if (element) {
+                            app.insertAdjacentHTML('beforeend', element.outerHTML);
+                        }
+                    });
+                    
+                    // Add SVG dividers
+                    const svgDividers = doc.querySelectorAll('.section-divider');
+                    svgDividers.forEach((divider, index) => {
+                        const sections = app.querySelectorAll('section, header');
+                        if (sections[index + 1]) {
+                            sections[index + 1].insertAdjacentHTML('beforebegin', divider.outerHTML);
+                        }
+                    });
+                    
+                    // Add lightbox modal
+                    const lightbox = doc.getElementById('imageLightbox');
+                    if (lightbox) {
+                        app.insertAdjacentHTML('beforeend', lightbox.outerHTML);
+                    }
+                    
+                    // Add chat widget scripts
+                    const chatScripts = doc.querySelectorAll('link[href*="n8n"], script[type="module"]');
+                    chatScripts.forEach(script => {
+                        if (script.tagName === 'LINK') {
+                            document.head.appendChild(script.cloneNode(true));
+                        } else if (script.innerHTML.includes('createChat')) {
+                            const newScript = document.createElement('script');
+                            newScript.type = 'module';
+                            newScript.textContent = script.innerHTML;
+                            document.body.appendChild(newScript);
+                        }
+                    });
+                    
+                    // Add structured data
+                    const structuredDataScripts = doc.querySelectorAll('script[type="application/ld+json"]');
+                    structuredDataScripts.forEach(script => {
+                        document.head.appendChild(script.cloneNode(true));
+                    });
+                    
+                } else {
+                    // Fallback: Show error message
+                    app.innerHTML = '<div style="text-align: center; padding: 50px;"><h2>Error al cargar el contenido</h2><p>Por favor, recarga la página.</p></div>';
+                }
+            } catch (error) {
+                console.error('Error loading content:', error);
+                // Fallback to basic content
+                app.innerHTML = '<div style="text-align: center; padding: 50px;"><h2>Kids Center Costa Rica</h2><p>Centro de Idiomas y Terapia de Lenguaje</p></div>';
+            }
+            
+            // Load main script
+            const script = document.createElement('script');
+            script.src = 'script.js';
+            document.body.appendChild(script);
+        })();
+    </script>
+</body>
+</html>

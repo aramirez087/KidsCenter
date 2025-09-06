@@ -371,6 +371,92 @@ html, body {
     display: block;
 }
 
+/* Modalidades Section */
+.modalidades {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff5f5 0%, #f0feff 100%);
+}
+
+.modalidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.modalidad-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.modalidad-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-blue));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.modalidad-card:hover::before {
+    opacity: 0.05;
+}
+
+.modalidad-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.modalidad-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-yellow));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.modalidad-icon svg {
+    color: var(--primary-pink);
+    transition: transform 0.3s ease;
+}
+
+.modalidad-card:hover .modalidad-icon svg {
+    transform: scale(1.1);
+}
+
+.modalidad-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-family: 'Baloo 2', 'Nunito', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+.modalidad-card p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
 /* Services Preview Section */
 .services-preview {
     padding: 80px 0;
@@ -811,6 +897,84 @@ html, body {
 .gallery {
     padding: 80px 0;
     background: var(--white);
+}
+
+/* Nuestro Espacio Section */
+.espacio {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-top: -1.5rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.espacio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.espacio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.espacio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.espacio-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.espacio-item:hover img {
+    transform: scale(1.1);
+}
+
+.espacio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 2rem 1.5rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.espacio-item:hover .espacio-overlay {
+    transform: translateY(0);
+}
+
+.espacio-overlay h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Baloo 2', 'Nunito', sans-serif;
+}
+
+.espacio-overlay p {
+    font-size: 1rem;
+    line-height: 1.4;
+    opacity: 0.9;
 }
 
 .gallery-grid {
@@ -1794,6 +1958,52 @@ textarea:focus {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+    
+    /* Modalidades responsive */
+    .modalidades-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .modalidad-card {
+        padding: 1.5rem;
+    }
+    
+    .modalidad-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .modalidad-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .modalidad-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Nuestro Espacio responsive */
+    .espacio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .espacio-item {
+        border-radius: 15px;
+    }
+    
+    .espacio-overlay {
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+    }
+    
+    .espacio-overlay h3 {
+        font-size: 1.2rem;
+    }
+    
+    .espacio-overlay p {
+        font-size: 0.9rem;
     }
     
     .nav-menu {

@@ -1,0 +1,33 @@
+<!-- Gallery Section -->
+<section class="gallery" aria-labelledby="team-title">
+    <div class="container">
+        <h2 id="team-title" class="section-title">Nuestro Equipo</h2>
+        <div class="gallery-grid gallery-grid--team">
+            <div class="gallery-item" onclick="openLightbox('images/teacher-1.jpg', 'Michelle Puth')">
+                <img src="images/teacher-1.jpg" alt="Terapeuta de lenguaje certificada de Kids Center Costa Rica" width="300" height="400" loading="lazy">
+                <div class="gallery-overlay">
+                    <span>Ver más grande</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('images/teacher-2.jpg', 'Silvia Figuls')">
+                <img src="images/teacher-2.jpg" alt="Profesora de idiomas especializada en metodología infantil" width="300" height="400" loading="lazy">
+                <div class="gallery-overlay">
+                    <span>Ver más grande</span>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('images/teacher-3.jpg', 'Sara Hause')">
+                <img src="images/teacher-3.jpg" alt="Especialista en estimulación temprana y desarrollo infantil" width="300" height="400" loading="lazy">
+                <div class="gallery-overlay">
+                    <span>Ver más grande</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Lightbox Modal -->
+<div id="imageLightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImage" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>

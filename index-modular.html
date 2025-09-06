@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Center Costa Rica | Terapia de Lenguaje, Idiomas y Refuerzo Académico para Niños</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kids Center Costa Rica: Centro especializado en terapia de lenguaje, enseñanza de idiomas (inglés, alemán, portugués), refuerzo académico y estimulación temprana para niños de 0-12 años en San José.">
+    <meta name="keywords" content="terapia de lenguaje costa rica, terapeuta del habla niños, estimulación temprana, clases de inglés niños, alemán para niños, portugués niños, refuerzo escolar san josé, kids center cr, centro de idiomas infantil, lectoescritura niños">
+    <meta name="author" content="Kids Center Costa Rica">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="CR-SJ">
+    <meta name="geo.placename" content="San José">
+    <meta name="geo.position" content="9.9281;-84.0907">
+    <meta name="ICBM" content="9.9281, -84.0907">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kids Center Costa Rica | Terapia de Lenguaje y Centro de Idiomas">
+    <meta property="og:description" content="Centro especializado en terapia de lenguaje, idiomas y refuerzo académico para niños. Evaluación gratuita. Atención personalizada desde los 6 meses hasta 12 años.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kidscenter.cr">
+    <meta property="og:image" content="https://kidscenter.cr/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_CR">
+    <meta property="og:site_name" content="Kids Center Costa Rica">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Center Costa Rica | Terapia de Lenguaje y Centro de Idiomas">
+    <meta name="twitter:description" content="Centro especializado en terapia de lenguaje, idiomas y refuerzo académico para niños en San José, Costa Rica.">
+    <meta name="twitter:image" content="https://kidscenter.cr/images/og-image.jpg">
+    <meta name="twitter:site" content="@kidscentercr">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kidscenter.cr">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Content will be loaded here dynamically -->
+    <div id="app"></div>
+
+    <!-- Main Script -->
+    <script type="module">
+        // Import structured data
+        import { injectStructuredData } from './src/schemas/structured-data.js';
+        
+        // Inject structured data into the page
+        injectStructuredData();
+        
+        // Load components and sections
+        async function loadContent() {
+            const app = document.getElementById('app');
+            
+            const sections = [
+                'src/components/navigation.html',
+                'src/sections/hero.html',
+                'src/components/dividers.html#divider-1',
+                'src/sections/age-programs.html',
+                'src/sections/about.html',
+                'src/sections/features.html',
+                'src/components/dividers.html#divider-2',
+                'src/sections/services.html',
+                'src/sections/testimonials.html',
+                'src/components/urgency-banner.html',
+                'src/sections/faq.html',
+                'src/sections/gallery.html',
+                'src/components/dividers.html#divider-3',
+                'src/sections/contact.html',
+                'src/components/footer.html',
+                'src/components/chat-widget.html'
+            ];
+            
+            for (const section of sections) {
+                try {
+                    const [path, id] = section.split('#');
+                    const response = await fetch(path);
+                    const html = await response.text();
+                    
+                    if (id) {
+                        // Extract specific divider by ID
+                        const temp = document.createElement('div');
+                        temp.innerHTML = html;
+                        const divider = temp.querySelector(`#${id}`);
+                        if (divider) {
+                            app.insertAdjacentHTML('beforeend', divider.outerHTML);
+                        }
+                    } else {
+                        app.insertAdjacentHTML('beforeend', html);
+                    }
+                } catch (error) {
+                    console.error(`Error loading ${section}:`, error);
+                }
+            }
+            
+            // Load main script after content is loaded
+            const script = document.createElement('script');
+            script.src = 'script.js';
+            document.body.appendChild(script);
+        }
+        
+        // Load content when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadContent);
+        } else {
+            loadContent();
+        }
+    </script>
+</body>
+</html>
