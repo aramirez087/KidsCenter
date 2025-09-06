@@ -1,5 +1,5 @@
 // Service Worker for Kids Center PWA
-const CACHE_NAME = 'kids-center-v1';
+const CACHE_NAME = 'kids-center-v2';
 const urlsToCache = [
     '/',
     '/styles.css',

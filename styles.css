@@ -350,7 +350,7 @@ html, body {
 
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.95);
-    color: var(--primary-purple);
+    color: var(--primary-pink);
     border-color: var(--white);
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
@@ -515,7 +515,7 @@ html, body {
 .age-badge {
     display: inline-block;
     padding: 6px 14px;
-    background: linear-gradient(135deg, var(--primary-pink), var(--primary-purple));
+    background: linear-gradient(135deg, var(--primary-pink), var(--primary-orange));
     color: white;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -686,7 +686,7 @@ html, body {
 /* Features Section */
 .features {
     padding: 80px 0;
-    background: linear-gradient(180deg, var(--pastel-orange) 0%, var(--pastel-purple) 100%);
+    background: linear-gradient(180deg, var(--pastel-orange) 0%, var(--pastel-pink) 100%);
     position: relative;
 }
 
@@ -1210,7 +1210,7 @@ html, body {
 
 .info-icon {
     font-size: 1.5rem;
-    color: var(--primary-purple);
+    color: var(--primary-pink);
 }
 
 .info-item h4 {
@@ -1289,7 +1289,7 @@ html, body {
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 50%, var(--primary-orange) 100%);
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-pink) 50%, var(--primary-orange) 100%);
     color: var(--white);
     padding: 3rem 0 1rem;
     position: relative;
