@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Kids Center Costa Rica - Blog y Noticias</title>
+        <link>https://kidscenter.cr/</link>
+        <atom:link href="https://kidscenter.cr/feed.xml" rel="self" type="application/rss+xml"/>
+        <description>Centro de Idiomas y Terapia de Lenguaje para niños en San José, Costa Rica. Artículos sobre desarrollo infantil, terapia de lenguaje y educación.</description>
+        <language>es-CR</language>
+        <copyright>Copyright 2025 Kids Center Costa Rica</copyright>
+        <lastBuildDate>Mon, 06 Jan 2025 12:00:00 -0600</lastBuildDate>
+        <generator>Kids Center CMS</generator>
+        <webMaster>info@kidscenter.cr (Kids Center)</webMaster>
+        <managingEditor>info@kidscenter.cr (Kids Center Editorial)</managingEditor>
+        <category>Education</category>
+        <category>Child Development</category>
+        <category>Language Therapy</category>
+        <ttl>60</ttl>
+        <image>
+            <url>https://kidscenter.cr/images/logo.jpg</url>
+            <title>Kids Center Costa Rica</title>
+            <link>https://kidscenter.cr/</link>
+            <width>144</width>
+            <height>72</height>
+        </image>
+        
+        <item>
+            <title>Importancia de la Estimulación Temprana del Lenguaje</title>
+            <link>https://kidscenter.cr/blog/estimulacion-temprana-lenguaje</link>
+            <guid isPermaLink="true">https://kidscenter.cr/blog/estimulacion-temprana-lenguaje</guid>
+            <description><![CDATA[Descubre cómo la estimulación temprana del lenguaje puede marcar una diferencia significativa en el desarrollo comunicativo de tu hijo. Técnicas y consejos de nuestros especialistas.]]></description>
+            <content:encoded><![CDATA[
+                <p>La estimulación temprana del lenguaje es fundamental para el desarrollo integral de los niños. En Kids Center Costa Rica, nuestros especialistas trabajan con técnicas innovadoras para potenciar las habilidades comunicativas desde los primeros meses de vida.</p>
+                <p>Los primeros tres años de vida son cruciales para el desarrollo del lenguaje, ya que el cerebro está en su máxima plasticidad. Durante este período, los niños absorben información del entorno y desarrollan las bases para la comunicación futura.</p>
+            ]]></content:encoded>
+            <pubDate>Mon, 06 Jan 2025 10:00:00 -0600</pubDate>
+            <dc:creator>Kids Center Costa Rica</dc:creator>
+            <category>Terapia de Lenguaje</category>
+            <category>Desarrollo Infantil</category>
+        </item>
+        
+        <item>
+            <title>Beneficios del Aprendizaje de Idiomas en la Infancia</title>
+            <link>https://kidscenter.cr/blog/beneficios-idiomas-infancia</link>
+            <guid isPermaLink="true">https://kidscenter.cr/blog/beneficios-idiomas-infancia</guid>
+            <description><![CDATA[El aprendizaje de múltiples idiomas durante la infancia ofrece beneficios cognitivos y sociales únicos. Conoce cómo nuestros programas de inglés, alemán y portugués potencian el desarrollo infantil.]]></description>
+            <content:encoded><![CDATA[
+                <p>En Kids Center Costa Rica, ofrecemos programas especializados de idiomas diseñados específicamente para niños. El aprendizaje temprano de idiomas no solo facilita la comunicación multicultural, sino que también mejora las habilidades cognitivas generales.</p>
+                <p>Los niños que aprenden múltiples idiomas desarrollan mejor flexibilidad mental, creatividad y capacidad de resolución de problemas.</p>
+            ]]></content:encoded>
+            <pubDate>Fri, 03 Jan 2025 09:00:00 -0600</pubDate>
+            <dc:creator>Kids Center Costa Rica</dc:creator>
+            <category>Idiomas</category>
+            <category>Educación</category>
+        </item>
+        
+        <item>
+            <title>Señales de Alerta en el Desarrollo del Habla</title>
+            <link>https://kidscenter.cr/blog/senales-alerta-desarrollo-habla</link>
+            <guid isPermaLink="true">https://kidscenter.cr/blog/senales-alerta-desarrollo-habla</guid>
+            <description><![CDATA[Aprende a identificar las señales que podrían indicar la necesidad de evaluación por un terapeuta del lenguaje. Guía completa para padres preocupados por el desarrollo comunicativo de sus hijos.]]></description>
+            <content:encoded><![CDATA[
+                <p>Como padres, es natural preocuparse por el desarrollo del habla de nuestros hijos. En Kids Center Costa Rica, ofrecemos evaluaciones gratuitas para determinar si existe alguna área que requiera atención especializada.</p>
+                <p>Algunas señales incluyen: vocabulario limitado para la edad, dificultad para formar oraciones, problemas de pronunciación persistentes, o frustración al intentar comunicarse.</p>
+            ]]></content:encoded>
+            <pubDate>Mon, 30 Dec 2024 08:30:00 -0600</pubDate>
+            <dc:creator>Kids Center Costa Rica</dc:creator>
+            <category>Terapia de Lenguaje</category>
+            <category>Salud Infantil</category>
+        </item>
+    </channel>
+</rss>

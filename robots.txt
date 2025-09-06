@@ -1,26 +1,74 @@
 # Robots.txt for Kids Center Costa Rica
 # https://kidscenter.cr
+# Last updated: 2025-01-06
 
-# Allow all crawlers
+# Allow all legitimate crawlers
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.woff$
+Allow: /*.woff2$
 Disallow: /admin/
 Disallow: /private/
 Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
 Disallow: /*.pdf$
+Disallow: /*?*utm=
+Disallow: /*?*ref=
+Disallow: /*&utm=
+Disallow: /*&ref=
 
 # Specific rules for major search engines
 User-agent: Googlebot
 Allow: /
+Allow: /*.css$
+Allow: /*.js$
 Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 0
+
+User-agent: Yandexbot
+Allow: /
 Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Applebot
+Allow: /
 
 # Block bad bots
 User-agent: AhrefsBot
