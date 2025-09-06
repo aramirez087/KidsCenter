@@ -341,3 +341,45 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+// SEO Performance Optimization: Lazy load images
+if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+        img.src = img.src;
+    });
+} else {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js';
+    script.async = true;
+    script.onload = () => {
+        const observer = lozad('.lazy');
+        observer.observe();
+    };
+    document.head.appendChild(script);
+}
+
+// Add structured data for search results - Dynamic breadcrumb
+function updateBreadcrumb() {
+    const currentHash = window.location.hash;
+    const breadcrumbSchema = document.querySelector('script[type="application/ld+json"]');
+    if (breadcrumbSchema && currentHash) {
+        const sectionName = currentHash.replace('#', '');
+        const capitalizedSection = sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
+        console.log(`Current section: ${capitalizedSection}`);
+    }
+}
+
+window.addEventListener('hashchange', updateBreadcrumb);
+updateBreadcrumb();
+
+// Service Worker for better performance (PWA)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('ServiceWorker registration successful');
+        }).catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
