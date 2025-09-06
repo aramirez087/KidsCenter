@@ -1508,7 +1508,7 @@ html, body {
     right: 0;
     background: white;
     box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
-    padding: 8px;
+    padding: 6px;  /* Reduced padding */
     z-index: 999;
     justify-content: space-around;
     align-items: center;
@@ -1519,27 +1519,27 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    padding: 10px 20px;
+    gap: 2px;  /* Reduced gap */
+    padding: 6px 16px;  /* Reduced padding */
     background: transparent;
     border: none;
     color: var(--text-dark);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.75rem;  /* Smaller font */
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 12px;
+    border-radius: 10px;  /* Slightly smaller radius */
 }
 
 .mobile-nav-btn.mobile-nav-primary {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     width: 100%;
-    max-width: 300px;
+    max-width: 240px;  /* Reduced max width */
     margin: 0 auto;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 3px 12px rgba(102, 126, 234, 0.25);
 }
 
 .mobile-nav-btn:hover {
@@ -1547,8 +1547,8 @@ html, body {
 }
 
 .mobile-nav-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;  /* Smaller icon */
+    height: 20px;
 }
 
 @media (max-width: 768px) {
@@ -2110,7 +2110,7 @@ textarea:focus {
     
     /* Adjust padding for fixed bottom nav */
     body {
-        padding-bottom: 70px;
+        padding-bottom: 60px;  /* Reduced for smaller nav */
     }
     
     /* Hero trust badges */
@@ -2401,7 +2401,7 @@ textarea:focus {
 .back-to-top {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 30px;  /* Changed from right to left */
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-purple) 100%);
@@ -2457,8 +2457,8 @@ textarea:focus {
 /* Responsive adjustments for back to top button */
 @media (max-width: 768px) {
     .back-to-top {
-        bottom: 80px; /* Above mobile bottom nav */
-        right: 20px;
+        bottom: 70px; /* Above mobile bottom nav */
+        left: 20px;  /* Changed from right to left */
         width: 45px;
         height: 45px;
     }
