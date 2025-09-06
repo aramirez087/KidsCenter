@@ -383,3 +383,53 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
+
+// Back to Top Button Functionality
+const backToTopBtn = document.getElementById('backToTopBtn');
+let scrollTimeout;
+
+// Show/hide button based on scroll position
+window.addEventListener('scroll', () => {
+    // Clear any existing timeout
+    clearTimeout(scrollTimeout);
+    
+    // Debounce the scroll event for better performance
+    scrollTimeout = setTimeout(() => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    }, 100);
+});
+
+// Smooth scroll to top when button is clicked
+backToTopBtn?.addEventListener('click', () => {
+    // Add a subtle animation effect
+    backToTopBtn.style.transform = 'scale(0.9)';
+    
+    // Smooth scroll to top
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    
+    // Reset button scale after animation
+    setTimeout(() => {
+        backToTopBtn.style.transform = '';
+    }, 200);
+});
+
+// Alternative smooth scroll for older browsers
+if (!('scrollBehavior' in document.documentElement.style)) {
+    backToTopBtn?.addEventListener('click', () => {
+        const scrollToTop = () => {
+            const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            if (currentScroll > 0) {
+                window.requestAnimationFrame(scrollToTop);
+                window.scrollTo(0, currentScroll - currentScroll / 8);
+            }
+        };
+        scrollToTop();
+    });
+}
