@@ -1,6 +1,6 @@
 # Robots.txt for Kids Center Costa Rica
 # https://kidscenter.cr
-# Last updated: 2025-01-06
+# Last updated: 2025-01-11
 
 # Allow all legitimate crawlers
 User-agent: *
