@@ -102,15 +102,12 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link rel="dns-prefetch" href="https://n8n.automationbeast.win">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    <!-- n8n Chat Styles - Load before custom styles -->
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?v=20250111">
     
     <!-- Preload Critical Resources -->
@@ -1148,107 +1145,6 @@
         </svg>
     </button>
 
-    <!-- n8n Chat Widget -->
-    <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-        
-        // Initialize n8n chat widget with Kids Center configuration
-        createChat({
-            webhookUrl: 'https://n8n.automationbeast.win/webhook/8adf142d-6a03-44fa-8b3e-ec7bffd3969a/chat',
-            mode: 'window',
-            initialMessages: [
-                '¡Hola! Bienvenido a Kids Center 🌈',
-                '¿En qué podemos ayudarte hoy? Puedo brindarte información sobre:',
-                '• Nuestros servicios de idiomas',
-                '• Terapia de lenguaje',
-                '• Refuerzo académico',
-                '• Horarios y precios'
-            ],
-            i18n: {
-                es: {
-                    title: 'Kids Center',
-                    subtitle: 'Asistente Virtual',
-                    footer: '',
-                    getStarted: '¡Hablemos! 💬',
-                    inputPlaceholder: 'Escribe tu mensaje aquí...',
-                    closeButtonTooltip: 'Cerrar'
-                }
-            },
-            defaultLanguage: 'es',
-            showWelcomeScreen: false,
-            allowFileUploads: false
-        });
-    </script>
-    
-    <!-- Override n8n Chat Theme with Kids Center Pastel Colors -->
-    <style>
-        /* Ensure our custom n8n chat theme variables take precedence */
-        :root {
-            /* N8N Chat Custom Theme - Kids Center Pastel Colors */
-            --chat--color-primary: #FF6BA6 !important;
-            --chat--color-primary-shade-50: #FF8FBD !important;
-            --chat--color-primary-shade-100: #FF4583 !important;
-            --chat--color-secondary: #5BC561 !important;
-            --chat--color-secondary-shade-50: #6DD073 !important;
-            --chat--color-white: #ffffff !important;
-            --chat--color-light: #FFFBE6 !important;
-            --chat--color-light-shade-50: #FFF4EC !important;
-            --chat--color-light-shade-100: #FFE9F3 !important;
-            --chat--color-medium: #EBF8FF !important;
-            --chat--color-dark: #2D3748 !important;
-            --chat--color-disabled: #E6E9F1 !important;
-            --chat--color-typing: #FFE066 !important;
-
-            --chat--spacing: 1rem !important;
-            --chat--border-radius: 1rem !important;
-            --chat--transition-duration: 0.3s !important;
-
-            --chat--window--width: 400px !important;
-            --chat--window--height: 600px !important;
-
-            --chat--header-height: auto !important;
-            --chat--header--padding: 1.2rem !important;
-            --chat--header--background: linear-gradient(135deg, #EBF8FF, #FFE9F3) !important;
-            --chat--header--color: #2D3748 !important;
-            --chat--header--border-top: none !important;
-            --chat--header--border-bottom: 2px solid #7DD3FF !important;
-            --chat--heading--font-size: 1.5em !important;
-            --chat--subtitle--font-size: 0.9em !important;
-            --chat--subtitle--line-height: 1.4 !important;
-
-            --chat--textarea--height: 50px !important;
-
-            --chat--message--font-size: 0.95rem !important;
-            --chat--message--padding: 0.8rem 1rem !important;
-            --chat--message--border-radius: 1rem !important;
-            --chat--message-line-height: 1.6 !important;
-            --chat--message--bot--background: #E8F8E9 !important;
-            --chat--message--bot--color: #2D3748 !important;
-            --chat--message--bot--border: 2px solid #5BC561 !important;
-            --chat--message--user--background: #FFE9F3 !important;
-            --chat--message--user--color: #2D3748 !important;
-            --chat--message--user--border: 2px solid #FF6BA6 !important;
-            --chat--message--pre--background: rgba(123, 211, 255, 0.1) !important;
-
-            --chat--toggle--background: linear-gradient(135deg, #FF6BA6, #5BC561) !important;
-            --chat--toggle--hover--background: linear-gradient(135deg, #FF4583, #4AB150) !important;
-            --chat--toggle--active--background: linear-gradient(135deg, #FF8FBD, #6DD073) !important;
-            --chat--toggle--color: #ffffff !important;
-            --chat--toggle--size: 60px !important;
-        }
-        
-        /* Additional overrides for n8n chat elements */
-        .n8n-chat-button {
-            background: linear-gradient(135deg, #FF6BA6, #5BC561) !important;
-            box-shadow: 0 4px 15px rgba(255, 107, 166, 0.3) !important;
-        }
-        
-        .n8n-chat-button:hover {
-            background: linear-gradient(135deg, #FF4583, #4AB150) !important;
-            transform: scale(1.05) !important;
-        }
-    </style>
-    
     <script src="script.js?v=20250111" defer></script>
     <script src="seo-monitor.js?v=20250111" defer></script>
     
