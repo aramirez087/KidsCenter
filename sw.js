@@ -1,5 +1,5 @@
 // Service Worker for Kids Center PWA
-const CACHE_NAME = 'kids-center-v3';
+const CACHE_NAME = 'kids-center-v4';
 const urlsToCache = [
     '/',
     '/styles.css',
@@ -28,24 +28,24 @@ self.addEventListener('fetch', event => {
                 if (response) {
                     return response;
                 }
-                
+
                 // Clone the request
                 const fetchRequest = event.request.clone();
-                
+
                 return fetch(fetchRequest).then(response => {
                     // Check if valid response
                     if (!response || response.status !== 200 || response.type !== 'basic') {
                         return response;
                     }
-                    
+
                     // Clone the response
                     const responseToCache = response.clone();
-                    
+
                     caches.open(CACHE_NAME)
                         .then(cache => {
                             cache.put(event.request, responseToCache);
                         });
-                    
+
                     return response;
                 });
             })
@@ -55,7 +55,7 @@ self.addEventListener('fetch', event => {
 // Activate Service Worker and clean old caches
 self.addEventListener('activate', event => {
     const cacheWhitelist = [CACHE_NAME];
-    
+
     event.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
