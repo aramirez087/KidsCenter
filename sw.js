@@ -1,10 +1,10 @@
 // Service Worker for Kids Center PWA
-const CACHE_NAME = 'kids-center-v2';
+const CACHE_NAME = 'kids-center-v3';
 const urlsToCache = [
     '/',
     '/styles.css',
     '/script.js',
-    '/images/logo.jpg',
+    '/images/logo.webp',
     'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap'
 ];
 

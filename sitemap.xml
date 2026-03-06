@@ -14,7 +14,7 @@
         <priority>1.0</priority>
         <mobile:mobile/>
         <image:image>
-            <image:loc>https://kidscenter.cr/images/logo.jpg</image:loc>
+            <image:loc>https://kidscenter.cr/images/logo.webp</image:loc>
             <image:title>Kids Center Costa Rica Logo</image:title>
             <image:caption>Centro de Idiomas y Terapia de Lenguaje para Niños y Adolescentes (0-17 años)</image:caption>
         </image:image>
