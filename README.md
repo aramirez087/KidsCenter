@@ -106,7 +106,7 @@ Esto creará `index-combined.html` con todo el contenido integrado.
 ## 📱 Contacto
 
 - **Instagram**: [@kidscentercr](https://www.instagram.com/kidscentercr/)
-- **Email**: info@kidscenter.cr
+- **Email**: kidscentercr@gmail.com
 - **Teléfono**: +506 2234-5678
 
 ## 📄 Licencia
