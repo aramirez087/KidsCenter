@@ -164,12 +164,14 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.service-card, .gallery-item');
+    const animateElements = document.querySelectorAll(
+        '.service-card, .gallery-item, .modalidad-card, .age-card, .espacio-item, .faq-item, .testimonial-content'
+    );
 
     animateElements.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(12px)';
-        el.style.transition = `opacity 0.5s ease ${index * 0.08}s, transform 0.5s ease ${index * 0.08}s`;
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = `opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.06}s, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.06}s`;
         observer.observe(el);
     });
 });
@@ -325,6 +327,12 @@ window.addEventListener('scroll', () => {
             backToTopBtn.classList.add('visible');
         } else {
             backToTopBtn.classList.remove('visible');
+        }
+
+        // Navbar scrolled state
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            navbar.classList.toggle('scrolled', window.pageYOffset > 60);
         }
     }, 100);
 });

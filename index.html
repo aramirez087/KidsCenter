@@ -87,60 +87,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet"
         media="print" onload="this.media='all'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     </noscript>
-    <link rel="stylesheet" href="styles.css?v=20260309">
+    <link rel="stylesheet" href="styles.css?v=20260319">
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="/images/logo.webp" as="image" type="image/webp">
-    <link rel="preload" href="styles.css?v=20260309" as="style">
-    <link rel="preload" href="script.js?v=20260309" as="script">
+    <link rel="preload" href="styles.css?v=20260319" as="style">
+    <link rel="preload" href="script.js?v=20260319" as="script">
 
     <!-- Critical CSS for Above-the-Fold Content -->
     <style>
         body {
             margin: 0;
             font-family: 'Nunito', sans-serif;
-            background: #fff
+            background: #FAF6F1
         }
 
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+            background: rgba(250, 246, 241, 0.9);
+            backdrop-filter: blur(20px);
             z-index: 1000
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px
+            padding: 0 24px
         }
 
         .hero {
-            padding: 150px 0 80px;
-            min-height: 80vh;
+            padding: 160px 0 100px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            background: #FFFAF5
+            background: #FAF6F1;
+            position: relative;
+            overflow: hidden
         }
 
         .nav-brand img {
-            height: 100px;
+            height: 80px;
             width: auto
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 36px;
-            border-radius: 10px;
+            padding: 16px 40px;
+            border-radius: 60px;
             text-decoration: none;
-            transition: all .3s
+            transition: all .4s cubic-bezier(.4,0,.2,1)
         }
     </style>
 
@@ -483,6 +485,13 @@
         </div>
     </header>
 
+    <!-- Section Divider -->
+    <div class="section-divider">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="currentColor"/>
+        </svg>
+    </div>
+
     <!-- Modalidades Section -->
     <section class="modalidades" aria-labelledby="modalidades-title">
         <div class="container">
@@ -557,7 +566,7 @@
                     </ul>
                     <a href="#servicios" class="card-link">Ver más →</a>
                 </div>
-                <div class="age-card featured">
+                <div class="age-card">
                     <div class="age-card-header">
                         <span class="age-badge">4-6 años</span>
                         <div class="age-icon">🎨</div>
@@ -750,35 +759,51 @@
             <div class="conocenos-subsection">
                 <h3 class="subsection-title">Nuestro Equipo</h3>
                 <div class="gallery-grid gallery-grid--team">
-                    <div class="gallery-item" onclick="openLightbox('images/teacher-1.webp', 'Michelle Puth')">
+                    <div class="gallery-item team-member" onclick="openLightbox('images/teacher-1.webp', 'Michelle Puth')">
                         <img src="images/teacher-1.webp"
                             alt="Terapeuta de lenguaje certificada de Kids Center Costa Rica" width="300" height="400"
                             loading="lazy">
                         <div class="gallery-overlay">
                             <span>Ver más grande</span>
                         </div>
+                        <div class="team-label">
+                            <strong>Michelle Puth</strong>
+                            <span>Terapia de Lenguaje</span>
+                        </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox('images/teacher_lane.webp', 'Lane Matos')">
+                    <div class="gallery-item team-member" onclick="openLightbox('images/teacher_lane.webp', 'Lane Matos')">
                         <img src="images/teacher_lane.webp" alt="Profesora de idiomas (Portugués) Lane Matos"
                             width="300" height="400" loading="lazy">
                         <div class="gallery-overlay">
                             <span>Ver más grande</span>
                         </div>
+                        <div class="team-label">
+                            <strong>Lane Matos</strong>
+                            <span>Portugués</span>
+                        </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox('images/teacher-3.webp', 'Sara Hause')">
+                    <div class="gallery-item team-member" onclick="openLightbox('images/teacher-3.webp', 'Sara Hause')">
                         <img src="images/teacher-3.webp"
                             alt="Especialista en estimulación temprana y desarrollo infantil" width="300" height="400"
                             loading="lazy">
                         <div class="gallery-overlay">
                             <span>Ver más grande</span>
                         </div>
+                        <div class="team-label">
+                            <strong>Sara Hause</strong>
+                            <span>Estimulación Temprana</span>
+                        </div>
                     </div>
-                    <div class="gallery-item" onclick="openLightbox('images/teacher_joha.webp', 'Joha Soto')">
+                    <div class="gallery-item team-member" onclick="openLightbox('images/teacher_joha.webp', 'Joha Soto')">
                         <img src="images/teacher_joha.webp"
                             alt="Joha Soto - Guía Montessori, Profesora de Preescolar y acompañamiento académico"
                             width="300" height="400" loading="lazy">
                         <div class="gallery-overlay">
                             <span>Ver más grande</span>
+                        </div>
+                        <div class="team-label">
+                            <strong>Johana Soto</strong>
+                            <span>Guía Montessori</span>
                         </div>
                     </div>
                 </div>
@@ -1045,8 +1070,8 @@
         </svg>
     </button>
 
-    <script src="script.js?v=20260309" defer></script>
-    <script src="seo-monitor.js?v=20260309" defer></script>
+    <script src="script.js?v=20260319" defer></script>
+    <script src="seo-monitor.js?v=20260319" defer></script>
 
     <!-- Performance Monitoring -->
     <script>
