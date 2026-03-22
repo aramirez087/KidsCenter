@@ -67,11 +67,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission with n8n webhook integration
+// Form submission with Vercel API
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    // Configuration - n8n webhook URL (production)
-    const N8N_WEBHOOK_URL = 'https://n8n.automationbeast.win/webhook/48c697d5-37a5-40fe-9e84-4176b0c76670';
+    // Configuration - Vercel Serverless Function endpoint
+    const CONTACT_API_URL = '/api/contact';
 
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -101,8 +101,8 @@ if (contactForm) {
         formMessage.classList.remove('visible');
 
         try {
-            // Send data to n8n webhook
-            const response = await fetch(N8N_WEBHOOK_URL, {
+            // Send data to Vercel API (Resend)
+            const response = await fetch(CONTACT_API_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
