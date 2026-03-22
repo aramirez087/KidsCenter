@@ -92,12 +92,12 @@
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     </noscript>
-    <link rel="stylesheet" href="styles.css?v=20260319">
+    <link rel="stylesheet" href="styles.css?v=20260321">
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="/images/logo.webp" as="image" type="image/webp">
-    <link rel="preload" href="styles.css?v=20260319" as="style">
-    <link rel="preload" href="script.js?v=20260319" as="script">
+    <link rel="preload" href="styles.css?v=20260321" as="style">
+    <link rel="preload" href="script.js?v=20260321" as="script">
 
     <!-- Critical CSS for Above-the-Fold Content -->
     <style>
@@ -145,6 +145,11 @@
             transition: all .4s cubic-bezier(.4,0,.2,1)
         }
     </style>
+
+    <!-- GSAP & Lenis for Motion Physics -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <!-- Schema.org JSON-LD Optimization -->
     <script type="speculationrules">
@@ -436,6 +441,12 @@
         ]
     }
     </script>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="customCursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -461,10 +472,15 @@
 
     <!-- Hero Section -->
     <header id="inicio" class="hero" role="banner">
+        <canvas id="heroParticles" class="hero-particles"></canvas>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Centro de Idiomas para Niños y Estimulación del Lenguaje</h1>
+                    <h1 class="hero-title">
+                        <span class="title-line"><span class="word">Centro</span> <span class="word">de</span> <span class="word">Idiomas</span></span>
+                        <span class="title-line"><span class="word">para</span> <span class="word">Niños</span> <span class="word">y</span></span>
+                        <span class="title-line"><span class="word">Estimulación</span> <span class="word">del</span> <span class="word">Lenguaje</span></span>
+                    </h1>
                     <p class="hero-subtitle">Especialistas en <span class="highlight">Alemán</span>, Inglés, Portugués y
                         Terapia de Lenguaje para niños y adolescentes de 0 a 17 años</p>
                     <div class="hero-trust-badges">
@@ -1070,7 +1086,7 @@
         </svg>
     </button>
 
-    <script src="script.js?v=20260319" defer></script>
+    <script src="script.js?v=20260321" defer></script>
     <script src="seo-monitor.js?v=20260319" defer></script>
 
     <!-- Performance Monitoring -->
