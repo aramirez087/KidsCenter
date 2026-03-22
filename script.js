@@ -43,17 +43,21 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Smooth scrolling for navigation links (using Lenis if available or fallback)
+// Smooth scrolling for navigation links
+// NOTE: lenisSmoothScroll is assigned later after Lenis init; declared here so handlers can reference it safely.
+let lenisSmoothScroll = null;
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
         if (target) {
+            e.preventDefault();
             const offset = 80; // Height of fixed navbar
             const targetPosition = target.offsetTop - offset;
-            
-            if (typeof lenis !== 'undefined') {
-                lenis.scrollTo(targetPosition, { duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+
+            if (lenisSmoothScroll) {
+                lenisSmoothScroll.scrollTo(targetPosition, { duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
             } else {
                 window.scrollTo({
                     top: targetPosition,
@@ -63,6 +67,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
             // Close mobile menu if open
             navMenu?.classList.remove('active');
+
+            // Reset hamburger animation
+            if (navMenu?.classList.contains('active') === false) {
+                const spans = hamburger?.querySelectorAll('span');
+                if (spans) {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            }
         }
     });
 });
@@ -154,24 +168,31 @@ if (contactForm) {
 
 // --- Premium Motion Physics: Lenis & GSAP ---
 
-// 1. Initialize Lenis for Smooth Scrolling
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical',
-    gestureDirection: 'vertical',
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-});
+// 1. Initialize Lenis for Smooth Scrolling (wrapped in try-catch for CDN resilience)
+try {
+    if (typeof Lenis !== 'undefined') {
+        lenisSmoothScroll = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
 
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
+        function raf(time) {
+            lenisSmoothScroll.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    }
+} catch (e) {
+    console.warn('Lenis smooth scroll failed to initialize:', e);
+    lenisSmoothScroll = null;
 }
-requestAnimationFrame(raf);
 
 // ── Custom Cursor Engine ──
 const cursor = document.getElementById('customCursor');
@@ -272,8 +293,8 @@ if (particleCanvas) {
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    lenisSmoothScroll?.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenisSmoothScroll?.raf(time * 1000); });
     gsap.ticker.lagSmoothing(0);
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -403,30 +424,32 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             });
         });
 
-        // ── Magnetic Buttons Engine ──
-        const magneticButtons = document.querySelectorAll('.btn');
-        magneticButtons.forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const position = btn.getBoundingClientRect();
-                const x = e.clientX - position.left - position.width / 2;
-                const y = e.clientY - position.top - position.height / 2;
-                gsap.to(btn, {
-                    x: x * 0.35,
-                    y: y * 0.35,
-                    duration: 0.8,
-                    ease: "power3.out"
+        // ── Magnetic Buttons Engine (desktop only — breaks touch targets on mobile) ──
+        if (!matchMedia('(hover: none)').matches) {
+            const magneticButtons = document.querySelectorAll('.btn');
+            magneticButtons.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const position = btn.getBoundingClientRect();
+                    const x = e.clientX - position.left - position.width / 2;
+                    const y = e.clientY - position.top - position.height / 2;
+                    gsap.to(btn, {
+                        x: x * 0.35,
+                        y: y * 0.35,
+                        duration: 0.8,
+                        ease: "power3.out"
+                    });
                 });
-            });
 
-            btn.addEventListener('mouseleave', () => {
-                gsap.to(btn, {
-                    x: 0,
-                    y: 0,
-                    duration: 1.2,
-                    ease: "elastic.out(1, 0.3)"
+                btn.addEventListener('mouseleave', () => {
+                    gsap.to(btn, {
+                        x: 0,
+                        y: 0,
+                        duration: 1.2,
+                        ease: "elastic.out(1, 0.3)"
+                    });
                 });
             });
-        });
+        }
 
         // ── Parallax Depth on Hero Blobs ──
         gsap.to('.hero::before', {
@@ -622,8 +645,8 @@ window.addEventListener('scroll', () => {
 
 // Smooth scroll to top when button is clicked
 backToTopBtn?.addEventListener('click', () => {
-    if (typeof lenis !== 'undefined') {
-        lenis.scrollTo(0, { duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    if (lenisSmoothScroll) {
+        lenisSmoothScroll.scrollTo(0, { duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
     } else {
         // Fallback smooth scroll
         window.scrollTo({

@@ -2086,14 +2086,14 @@ textarea:focus-visible {
     }
 
     .hero {
-        padding: 100px 0 50px;
+        padding: 76px 0 40px;
         min-height: auto;
     }
 
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
+        gap: 1.25rem;
     }
 
     .hero-text {
@@ -2108,18 +2108,18 @@ textarea:focus-visible {
 
     .hero-title {
         font-size: clamp(2rem, 7vw, 2.8rem);
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
     }
 
     .hero-subtitle {
         font-size: clamp(1rem, 3vw, 1.15rem);
         max-width: 100%;
-        margin-bottom: 1.25rem;
+        margin-bottom: 1rem;
     }
 
     .hero-trust-badges {
         justify-content: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .trust-badge {
@@ -2368,26 +2368,26 @@ textarea:focus-visible {
 /* ─── Extra small ─── */
 @media (max-width: 480px) {
     .hero {
-        padding: 90px 0 30px;
+        padding: 68px 0 24px;
     }
 
     .hero-content {
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .hero-title {
         font-size: 1.75rem;
         line-height: 1.2;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
     }
 
     .hero-subtitle {
         font-size: 0.95rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
     }
 
     .hero-trust-badges {
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.75rem;
     }
 
     .trust-badge {
