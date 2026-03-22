@@ -2024,6 +2024,38 @@ textarea:focus-visible {
         display: flex;
     }
 
+    /* Smaller nav logo on mobile */
+    .nav-logo {
+        max-height: 56px;
+        height: 56px;
+    }
+
+    .navbar.scrolled .nav-logo {
+        max-height: 48px;
+        height: 48px;
+    }
+
+    .navbar .container {
+        padding: 0.5rem 16px;
+    }
+
+    /* Hamburger alignment */
+    .hamburger {
+        padding: 10px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
     .nav-menu {
         display: none;
         position: absolute;
@@ -2034,9 +2066,10 @@ textarea:focus-visible {
         -webkit-backdrop-filter: blur(24px);
         backdrop-filter: blur(24px);
         flex-direction: column;
-        padding: 2rem;
+        padding: 1.5rem 16px;
         gap: 0;
         border-bottom: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-md);
     }
 
     .nav-menu.active {
@@ -2053,19 +2086,20 @@ textarea:focus-visible {
     }
 
     .hero {
-        padding: 120px 0 60px;
+        padding: 100px 0 50px;
         min-height: auto;
     }
 
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .hero-text {
         text-align: center;
         order: 1;
+        padding: 0;
     }
 
     .hero-image {
@@ -2074,23 +2108,31 @@ textarea:focus-visible {
 
     .hero-title {
         font-size: clamp(2rem, 7vw, 2.8rem);
+        margin-bottom: 1rem;
     }
 
     .hero-subtitle {
-        font-size: clamp(1rem, 3vw, 1.2rem);
+        font-size: clamp(1rem, 3vw, 1.15rem);
         max-width: 100%;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-trust-badges {
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .trust-badge {
+        font-size: 0.75rem;
+        padding: 6px 14px;
     }
 
     .hero-buttons {
         justify-content: center;
     }
 
-    .hero-trust-badges {
-        justify-content: center;
-    }
-
     .hero-image img {
-        max-height: 350px;
+        max-height: 320px;
         border-radius: var(--radius-lg);
     }
 
@@ -2120,14 +2162,23 @@ textarea:focus-visible {
         text-align: left;
     }
 
+    /* Modalidades: single column on mobile */
     .modalidades-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .modalidad-card {
+        padding: 2rem 1.5rem;
     }
 
     .age-cards {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .age-card {
+        padding: 2rem 1.5rem;
     }
 
     .age-card.featured {
@@ -2143,13 +2194,34 @@ textarea:focus-visible {
         grid-column: span 1;
     }
 
+    .service-header {
+        padding: 1.5rem 1.5rem 0.5rem;
+    }
+
+    .service-content {
+        padding: 0.75rem 1.5rem 1.5rem;
+    }
+
     .gallery-grid--team {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 0.75rem;
     }
 
     .gallery-grid--team .gallery-item img {
-        height: 300px;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .team-label {
+        padding: 1rem 0.75rem 0.75rem;
+    }
+
+    .team-label strong {
+        font-size: 0.95rem;
+    }
+
+    .team-label span {
+        font-size: 0.7rem;
     }
 
     .espacio-grid {
@@ -2160,26 +2232,46 @@ textarea:focus-visible {
     .espacio-overlay {
         transform: translateY(0);
         background: linear-gradient(to top, rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.6));
+        padding: 2rem 1.25rem 1.25rem;
+    }
+
+    .espacio-overlay h3 {
+        font-size: 1.2rem;
+    }
+
+    .espacio-overlay p {
+        font-size: 0.85rem;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
     }
 
     .footer-brand p {
         max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer-logo {
+        margin: 0 auto 1rem;
     }
 
     body {
-        padding-bottom: 60px;
+        padding-bottom: 70px;
     }
 
     .section-title {
         font-size: clamp(1.8rem, 6vw, 2.2rem);
     }
 
-    /* Section spacing mobile */
+    .subsection-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Section spacing mobile — tighter */
     .modalidades,
     .services-preview,
     .about,
@@ -2188,7 +2280,13 @@ textarea:focus-visible {
     .faq,
     .conocenos,
     .contact {
-        padding: 4rem 0;
+        padding: 3.5rem 0;
+    }
+
+    .modalidades-grid,
+    .age-cards,
+    .services-grid {
+        margin-top: 2rem;
     }
 
     .container {
@@ -2197,7 +2295,13 @@ textarea:focus-visible {
 
     .contact-form-container,
     .contact-info {
-        padding: 2rem 1.5rem;
+        padding: 1.75rem 1.25rem;
+    }
+
+    .contact-form-container h3,
+    .contact-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
     }
 
     .about-logo-container {
@@ -2206,28 +2310,35 @@ textarea:focus-visible {
     }
 
     .about-logo {
-        max-width: 320px;
-        padding: 20px;
+        max-width: 280px;
+        padding: 18px;
     }
 
     .testimonial-content {
-        padding: 2.5rem 1.5rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .testimonial-content::before {
+        font-size: 3.5rem;
+        top: 12px;
+        left: 16px;
     }
 
     .testimonial-content p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.7;
     }
 
     .btn-large {
-        padding: 16px 36px;
-        font-size: 1rem;
+        padding: 14px 32px;
+        font-size: 0.95rem;
     }
 
     .back-to-top {
-        bottom: 75px;
-        left: 20px;
-        width: 42px;
-        height: 42px;
+        bottom: 80px;
+        left: 16px;
+        width: 40px;
+        height: 40px;
     }
 
     .back-to-top svg {
@@ -2237,31 +2348,64 @@ textarea:focus-visible {
 
     .faq-question {
         font-size: 0.95rem;
-        padding: 1.25rem 1.5rem;
+        padding: 1.25rem 1.25rem;
+    }
+
+    .faq-answer.active {
+        padding: 1.25rem;
+    }
+
+    .lead {
+        font-size: 1.05rem;
+    }
+
+    .section-title::after {
+        width: 40px;
+        margin-top: 0.75rem;
     }
 }
 
 /* ─── Extra small ─── */
 @media (max-width: 480px) {
     .hero {
-        padding: 120px 0 40px;
+        padding: 90px 0 30px;
+    }
+
+    .hero-content {
+        gap: 1.5rem;
     }
 
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
         line-height: 1.2;
+        margin-bottom: 0.75rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
     }
 
-    .modalidades-grid {
-        grid-template-columns: 1fr;
+    .hero-trust-badges {
+        margin-bottom: 1.25rem;
+    }
+
+    .trust-badge {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+
+    .hero-image img {
+        max-height: 260px;
     }
 
     .gallery-grid--team {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .gallery-grid--team .gallery-item img {
+        height: 300px;
     }
 
     .btn {
@@ -2270,7 +2414,8 @@ textarea:focus-visible {
     }
 
     .btn-large {
-        padding: 16px 28px;
+        padding: 14px 24px;
+        font-size: 0.9rem;
     }
 
     .hero-buttons {
@@ -2279,20 +2424,64 @@ textarea:focus-visible {
     }
 
     .service-header {
-        padding: 2rem;
+        padding: 1.5rem 1.25rem 0.5rem;
+    }
+
+    .service-content {
+        padding: 0.5rem 1.25rem 1.25rem;
     }
 
     .service-icon {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        width: 48px;
+        height: 48px;
     }
 
     .faq-question {
-        font-size: 0.9rem;
-        padding: 1rem 1.25rem;
+        font-size: 0.88rem;
+        padding: 1rem 1rem;
     }
 
-    .gallery-grid--team .gallery-item img {
-        height: 280px;
+    .faq-answer.active {
+        padding: 1rem;
+    }
+
+    /* Even tighter section spacing */
+    .modalidades,
+    .services-preview,
+    .about,
+    .services,
+    .testimonials,
+    .faq,
+    .conocenos,
+    .contact {
+        padding: 2.5rem 0;
+    }
+
+    .contact-form-container,
+    .contact-info {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer {
+        padding: 2.5rem 0 1rem;
+    }
+
+    .footer-content {
+        gap: 1.5rem;
+    }
+
+    .nav-logo {
+        max-height: 48px;
+        height: 48px;
+    }
+
+    .section-title {
+        font-size: clamp(1.6rem, 6vw, 2rem);
+    }
+
+    .subsection-title {
+        font-size: 1.3rem;
     }
 }
 
@@ -2329,14 +2518,23 @@ textarea:focus-visible {
 @media (max-width: 768px) and (orientation: landscape) {
     .hero {
         min-height: auto;
-        padding: 80px 0 40px;
+        padding: 80px 0 30px;
+    }
+
+    .hero-content {
+        gap: 1.5rem;
     }
 
     .hero-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .hero-image img {
-        max-height: 250px;
+        max-height: 200px;
+    }
+
+    .nav-logo {
+        max-height: 44px;
+        height: 44px;
     }
 }
