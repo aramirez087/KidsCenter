@@ -94,8 +94,8 @@
     </noscript>
     <!-- Preload Critical Resources -->
     <link rel="preload" href="/images/logo.webp" as="image" type="image/webp">
-    <link rel="preload" href="styles.css?v=20260323" as="style">
-    <link rel="preload" href="script.js?v=20260323" as="script">
+    <link rel="preload" href="styles.css?v=20260609" as="style">
+    <link rel="preload" href="script.js?v=20260609" as="script">
 
     <!-- Critical CSS for Above-the-Fold Content -->
     <style>
@@ -151,7 +151,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="styles.css?v=20260323">
+    <link rel="stylesheet" href="styles.css?v=20260609">
 
     <!-- GSAP & Lenis for Motion Physics -->
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
@@ -459,6 +459,9 @@
         ]
     }
     </script>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
     <!-- Custom Cursor -->
     <div class="cursor" id="customCursor">
         <div class="cursor-dot"></div>
@@ -491,9 +494,12 @@
     <!-- Hero Section -->
     <header id="inicio" class="hero" role="banner">
         <canvas id="heroParticles" class="hero-particles"></canvas>
+        <div class="hero-blob hero-blob--green" aria-hidden="true"></div>
+        <div class="hero-blob hero-blob--pink" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
+                    <span class="hero-eyebrow">San José, Costa Rica · 0 a 17 años</span>
                     <h1 class="hero-title">
                         <span class="title-line"><span class="word">Centro</span> <span class="word">de</span> <span class="word">Idiomas</span></span>
                         <span class="title-line"><span class="word">para</span> <span class="word">Niños</span> <span class="word">y</span></span>
@@ -511,6 +517,10 @@
                     </div>
                 </div>
                 <div class="hero-image">
+                    <span class="hero-sticker hero-sticker--de" aria-hidden="true">Hallo!</span>
+                    <span class="hero-sticker hero-sticker--en" aria-hidden="true">Hello!</span>
+                    <span class="hero-sticker hero-sticker--pt" aria-hidden="true">Olá!</span>
+                    <span class="hero-sticker hero-sticker--es" aria-hidden="true">¡Hola!</span>
                     <img src="images/nina_estudiosa.webp"
                         alt="Niña feliz y estudiosa aprendiendo en Kids Center Costa Rica" width="600" height="500"
                         loading="eager">
@@ -520,15 +530,38 @@
     </header>
 
     <!-- Section Divider -->
-    <div class="section-divider">
+    <div class="section-divider section-divider--green">
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="currentColor"/>
         </svg>
     </div>
 
+    <!-- Greetings Marquee -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span class="marquee-item">¡Hola!</span><span class="marquee-star">✦</span>
+            <span class="marquee-item--alt">Terapia de Lenguaje</span><span class="marquee-star">✦</span>
+            <span class="marquee-item">Hallo!</span><span class="marquee-star">✦</span>
+            <span class="marquee-item--alt">Alemán</span><span class="marquee-star">✦</span>
+            <span class="marquee-item">Hello!</span><span class="marquee-star">✦</span>
+            <span class="marquee-item--alt">Inglés</span><span class="marquee-star">✦</span>
+            <span class="marquee-item">Olá!</span><span class="marquee-star">✦</span>
+            <span class="marquee-item--alt">Portugués</span><span class="marquee-star">✦</span>
+            <span class="marquee-item">¡Hola!</span><span class="marquee-star">✦</span>
+            <span class="marquee-item--alt">Terapia de Lenguaje</span><span class="marquee-star">✦</span>
+            <span class="marquee-item">Hallo!</span><span class="marquee-star">✦</span>
+            <span class="marquee-item--alt">Alemán</span><span class="marquee-star">✦</span>
+            <span class="marquee-item">Hello!</span><span class="marquee-star">✦</span>
+            <span class="marquee-item--alt">Inglés</span><span class="marquee-star">✦</span>
+            <span class="marquee-item">Olá!</span><span class="marquee-star">✦</span>
+            <span class="marquee-item--alt">Portugués</span><span class="marquee-star">✦</span>
+        </div>
+    </div>
+
     <!-- Modalidades Section -->
     <section class="modalidades" aria-labelledby="modalidades-title">
         <div class="container">
+            <span class="section-eyebrow">Cómo aprendemos</span>
             <h2 id="modalidades-title" class="section-title">Modalidades</h2>
             <div class="modalidades-grid">
                 <div class="modalidad-card">
@@ -585,6 +618,7 @@
     <!-- Age Programs Section -->
     <section class="services-preview" aria-labelledby="age-programs-title">
         <div class="container">
+            <span class="section-eyebrow">Para cada etapa</span>
             <h2 id="age-programs-title" class="section-title">Programas por Edad</h2>
             <div class="age-cards">
                 <div class="age-card">
@@ -646,6 +680,7 @@
     <!-- About Section -->
     <section id="nosotros" class="about" aria-labelledby="about-title">
         <div class="container">
+            <span class="section-eyebrow">Nuestra historia</span>
             <h2 id="about-title" class="section-title">Quiénes Somos</h2>
             <div class="about-grid">
                 <div class="about-content">
@@ -675,12 +710,31 @@
                         height="400" loading="lazy">
                 </div>
             </div>
+            <div class="stats-band">
+                <div class="stat">
+                    <div class="stat-value"><span class="stat-number" data-count="47">0</span><span class="stat-suffix">+</span></div>
+                    <span class="stat-label">Familias satisfechas</span>
+                </div>
+                <div class="stat">
+                    <div class="stat-value"><span class="stat-number" data-count="4">0</span></div>
+                    <span class="stat-label">Idiomas impartidos</span>
+                </div>
+                <div class="stat">
+                    <div class="stat-value"><span class="stat-number" data-count="5">0</span></div>
+                    <span class="stat-label">Especialistas dedicadas</span>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">0–<span class="stat-number" data-count="17">0</span></div>
+                    <span class="stat-label">Años de edad atendidos</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <main id="servicios" class="services" aria-labelledby="services-title">
         <div class="container">
+            <span class="section-eyebrow">Lo que ofrecemos</span>
             <h2 id="services-title" class="section-title">Nuestros Servicios</h2>
             <div class="services-grid">
                 <div class="service-card">
@@ -740,6 +794,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials" aria-labelledby="testimonials-title">
         <div class="container">
+            <span class="section-eyebrow">Familias felices</span>
             <h2 id="testimonials-title" class="section-title">Lo Que Dicen Nuestros Padres</h2>
             <div class="testimonials-carousel">
                 <div class="testimonial-card active">
@@ -787,6 +842,7 @@
     <!-- Conocenos Section (Team + Facilities merged) -->
     <section class="conocenos" aria-labelledby="conocenos-title">
         <div class="container">
+            <span class="section-eyebrow">El equipo y el espacio</span>
             <h2 id="conocenos-title" class="section-title">Conócenos</h2>
 
             <!-- Team Sub-section -->
@@ -908,12 +964,13 @@
     <!-- FAQ Section -->
     <section class="faq" aria-labelledby="faq-title">
         <div class="container">
+            <span class="section-eyebrow">Resolvemos tus dudas</span>
             <h2 id="faq-title" class="section-title">Preguntas Frecuentes</h2>
             <div class="faq-grid">
                 <div class="faq-item">
                     <button class="faq-question active">
                         ¿A partir de qué edad pueden asistir los niños?
-                        <span class="faq-icon">▼</span>
+                        <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer active">
                         <p>Atendemos niños y adolescentes desde los 6 meses hasta los 17 años. Nuestros programas están
@@ -925,7 +982,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         ¿Cuánto dura cada sesión de terapia?
-                        <span class="faq-icon">▶</span>
+                        <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
                         <p>Las sesiones individuales duran 45-50 minutos, mientras que las sesiones grupales son de 60
@@ -935,7 +992,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         ¿Cómo sé si mi hijo necesita terapia de lenguaje?
-                        <span class="faq-icon">▶</span>
+                        <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
                         <p>Algunos signos incluyen: dificultad para pronunciar palabras, vocabulario limitado para su
@@ -946,7 +1003,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         ¿Trabajan con el seguro médico?
-                        <span class="faq-icon">▶</span>
+                        <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
                         <p>Actualmente no trabajamos con seguros médicos. Sin embargo, ofrecemos planes de pago
@@ -956,7 +1013,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         ¿Cuánto tiempo toma ver resultados?
-                        <span class="faq-icon">▶</span>
+                        <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
                         <p>Cada niño es único, pero generalmente los padres notan mejoras significativas entre las 8-12
@@ -966,7 +1023,7 @@
                 <div class="faq-item">
                     <button class="faq-question">
                         ¿Ofrecen sesiones virtuales?
-                        <span class="faq-icon">▶</span>
+                        <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
                         <p>Sí, ofrecemos sesiones virtuales para familias que no pueden asistir presencialmente.
@@ -981,6 +1038,7 @@
     <!-- Contact Section -->
     <section id="contacto" class="contact" aria-labelledby="contact-title">
         <div class="container">
+            <span class="section-eyebrow">Hablemos</span>
             <h2 id="contact-title" class="section-title">Contacto</h2>
             <div class="contact-grid">
                 <div class="contact-form-container">
@@ -1116,7 +1174,7 @@
         </svg>
     </button>
 
-    <script src="script.js?v=20260323" defer></script>
+    <script src="script.js?v=20260609" defer></script>
     <script src="seo-monitor.js?v=20260319" defer></script>
 
     <!-- Performance Monitoring -->

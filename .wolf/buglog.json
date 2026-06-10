@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "bugs": [
+    {
+      "id": "bug-001",
+      "timestamp": "2026-06-10T03:42:42.926Z",
+      "error_message": "Significant refactor of ",
+      "file": "styles.css",
+      "root_cause": "16 lines replaced/restructured",
+      "fix": "Rewrote 54→105 lines (16 removed) | Also: .hero::before,; .hero::after { | Also: border-radius: var(--radius-lg);; .hero-image::before,",
+      "tags": [
+        "auto-detected",
+        "refactor",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-06-10T03:44:28.989Z"
+    },
+    {
+      "id": "bug-002",
+      "timestamp": "2026-06-10T03:43:33.597Z",
+      "error_message": "CSS fix: border-radius, transition",
+      "file": "styles.css",
+      "root_cause": "border-radius: var(--radius-lg) → var(--radius-md); transition: all var(--transition-base) → rotate var(--transition-base), translate var(--transition-base), box-shadow var(--transition-base)",
+      "fix": "Changed border-radius: var(--radius-lg) → var(--radius-md); transition: all var(--transition-base) → rotate var(--transition-base), translate var(--transition-base), box-shadow var(--transition-base)",
+      "tags": [
+        "auto-detected",
+        "style-fix",
+        "css"
+      ],
+      "related_bugs": [],
+      "occurrences": 3,
+      "last_seen": "2026-06-10T03:43:55.758Z"
+    },
+    {
+      "id": "bug-003",
+      "timestamp": "2026-06-10T03:45:35.359Z",
+      "error_message": "Incorrect value in code",
+      "file": "index.html",
+      "root_cause": "Had \"age-programs-title\"",
+      "fix": "Changed to \"section-eyebrow\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "html"
+      ],
+      "related_bugs": [],
+      "occurrences": 7,
+      "last_seen": "2026-06-10T03:45:45.160Z"
+    },
+    {
+      "id": "bug-004",
+      "timestamp": "2026-06-10T03:46:34.646Z",
+      "error_message": "Missing guard clause",
+      "file": "script.js",
+      "root_cause": "No early return/throw for edge case: scrollProgress",
+      "fix": "Added guard clause: if (scrollProgress)",
+      "tags": [
+        "auto-detected",
+        "guard-clause",
+        "js"
+      ],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-10T03:46:34.646Z"
+    },
+    {
+      "id": "bug-005",
+      "timestamp": "2026-06-09T00:00:00.000Z",
+      "error_message": "Hero blob parallax never animated (silent no-op)",
+      "file": "script.js",
+      "root_cause": "GSAP cannot tween CSS pseudo-elements; gsap.to('.hero::before'/'.hero::after') selectors match nothing, so the ScrollTrigger parallax on the hero blobs silently did nothing",
+      "fix": "Converted blobs to real DOM elements (.hero-blob--green / .hero-blob--pink divs in index.html, classes in styles.css) and retargeted the GSAP tweens to them",
+      "tags": ["gsap", "pseudo-element", "parallax", "silent-failure"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-06-09T00:00:00.000Z"
+    }
+  ]
+}

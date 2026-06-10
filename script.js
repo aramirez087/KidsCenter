@@ -452,7 +452,8 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         }
 
         // ── Parallax Depth on Hero Blobs ──
-        gsap.to('.hero::before', {
+        // (GSAP cannot tween pseudo-elements, so the blobs are real .hero-blob divs)
+        gsap.to('.hero-blob--green', {
             yPercent: -30,
             ease: "none",
             scrollTrigger: {
@@ -463,7 +464,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             }
         });
 
-        gsap.to('.hero::after', {
+        gsap.to('.hero-blob--pink', {
             yPercent: 20,
             ease: "none",
             scrollTrigger: {
@@ -513,7 +514,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Counter animation for statistics (if needed in future)
+// Counter animation for statistics
 function animateValue(element, start, end, duration) {
     const range = end - start;
     const increment = range / (duration / 16);
@@ -528,6 +529,28 @@ function animateValue(element, start, end, duration) {
             element.textContent = Math.floor(current);
         }
     }, 16);
+}
+
+// Animate stat counters once when the stats band scrolls into view
+const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+if (statNumbers.length > 0 && 'IntersectionObserver' in window) {
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.dataset.count, 10);
+                if (reduceMotion) {
+                    entry.target.textContent = target;
+                } else {
+                    animateValue(entry.target, 0, target, 1400);
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+    statNumbers.forEach(el => statsObserver.observe(el));
+} else {
+    statNumbers.forEach(el => { el.textContent = el.dataset.count; });
 }
 
 // Testimonials Carousel
@@ -566,22 +589,18 @@ const faqQuestions = document.querySelectorAll('.faq-question');
 faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
         const answer = question.nextElementSibling;
-        const icon = question.querySelector('.faq-icon');
-        const isActive = question.classList.contains('active');
 
-        // Close all other FAQs
+        // Close all other FAQs (icon rotation is handled in CSS via .active)
         faqQuestions.forEach(q => {
             if (q !== question) {
                 q.classList.remove('active');
                 q.nextElementSibling.classList.remove('active');
-                q.querySelector('.faq-icon').textContent = '▶';
             }
         });
 
         // Toggle current FAQ
         question.classList.toggle('active');
         answer.classList.toggle('active');
-        icon.textContent = isActive ? '▶' : '▼';
     });
 });
 
@@ -617,6 +636,22 @@ window.addEventListener('hashchange', updateBreadcrumb);
 updateBreadcrumb();
 
 // Removed Service Worker registration to rely on Vercel's Edge caching
+
+// Scroll Progress Bar (rAF-throttled, separate from the debounced scroll handler)
+const scrollProgress = document.getElementById('scrollProgress');
+if (scrollProgress) {
+    let progressTicking = false;
+    window.addEventListener('scroll', () => {
+        if (progressTicking) return;
+        progressTicking = true;
+        requestAnimationFrame(() => {
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+            scrollProgress.style.transform = `scaleX(${Math.min(ratio, 1)})`;
+            progressTicking = false;
+        });
+    }, { passive: true });
+}
 
 // Back to Top Button Functionality
 const backToTopBtn = document.getElementById('backToTopBtn');
