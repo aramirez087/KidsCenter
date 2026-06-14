@@ -521,58 +521,6 @@ img {
     66% { border-radius: 46% 54% 58% 42% / 56% 42% 58% 44%; }
 }
 
-/* Floating greeting stickers — one per language taught */
-.hero-sticker {
-    position: absolute;
-    z-index: 3;
-    padding: 9px 18px;
-    border-radius: var(--radius-full);
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.05rem;
-    line-height: 1;
-    color: #fff;
-    box-shadow: var(--shadow-md);
-    pointer-events: none;
-    animation: stickerFloat 6s ease-in-out infinite;
-}
-
-.hero-sticker--de {
-    top: 6%;
-    left: -4%;
-    background: var(--color-primary);
-    transform: rotate(-7deg);
-    animation-delay: 0s;
-}
-
-.hero-sticker--en {
-    top: 22%;
-    right: -5%;
-    background: var(--color-accent);
-    transform: rotate(5deg);
-    animation-delay: 1.5s;
-}
-
-.hero-sticker--pt {
-    bottom: 24%;
-    left: -7%;
-    background: var(--color-secondary);
-    transform: rotate(4deg);
-    animation-delay: 3s;
-}
-
-.hero-sticker--es {
-    bottom: 4%;
-    right: 2%;
-    background: #D4915A;
-    transform: rotate(-5deg);
-    animation-delay: 4.5s;
-}
-
-@keyframes stickerFloat {
-    0%, 100% { translate: 0 0; }
-    50% { translate: 0 -10px; }
-}
 
 /* ─── Section Dividers ─── */
 .section-divider {
@@ -2221,8 +2169,7 @@ textarea:focus-visible {
     }
     .hero-blob,
     .hero-image::before,
-    .hero-image img,
-    .hero-sticker {
+    .hero-image img {
         animation: none;
     }
     .marquee-track {
@@ -2404,10 +2351,6 @@ textarea:focus-visible {
         margin-bottom: 0.75rem;
     }
 
-    .hero-sticker {
-        font-size: 0.85rem;
-        padding: 7px 13px;
-    }
 
     .marquee {
         padding: 0.85rem 0;
@@ -2694,14 +2637,6 @@ textarea:focus-visible {
         max-height: 260px;
     }
 
-    .hero-sticker {
-        font-size: 0.75rem;
-        padding: 6px 11px;
-    }
-
-    .hero-sticker--es {
-        display: none;
-    }
 
     .stats-band {
         padding: 1.5rem 1rem;

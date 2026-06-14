@@ -41,3 +41,8 @@
 | 21:00 | Fixed silent bug: GSAP parallax targeted .hero::before/::after pseudo-elements (no-op); converted to real .hero-blob divs | index.html, styles.css, script.js | fixed, logged bug-005 | — |
 | 21:00 | Cache versions bumped to v=20260609 | index.html | done | — |
 | 21:49 | Session end: 29 writes across 3 files (styles.css, index.html, script.js) | 3 reads | ~41858 tok |
+
+## Session: 2026-06-10 07:21
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
