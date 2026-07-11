@@ -94,8 +94,8 @@
     </noscript>
     <!-- Preload Critical Resources -->
     <link rel="preload" href="/images/logo.webp" as="image" type="image/webp">
-    <link rel="preload" href="styles.css?v=20260613" as="style">
-    <link rel="preload" href="script.js?v=20260609" as="script">
+    <link rel="preload" href="styles.css?v=20260711d" as="style">
+    <link rel="preload" href="script.js?v=20260711c" as="script">
 
     <!-- Critical CSS for Above-the-Fold Content -->
     <style>
@@ -151,10 +151,9 @@
         }
     </style>
 
-    <link rel="stylesheet" href="styles.css?v=20260613">
+    <link rel="stylesheet" href="styles.css?v=20260711d">
 
-    <!-- GSAP & Lenis for Motion Physics -->
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <!-- GSAP motion system; native smooth scrolling is used as a resilient fallback -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
@@ -502,7 +501,7 @@
                     <span class="hero-eyebrow">San José, Costa Rica · 0 a 17 años</span>
                     <h1 class="hero-title">
                         <span class="title-line"><span class="word">Centro</span> <span class="word">de</span> <span class="word">Idiomas</span></span>
-                        <span class="title-line"><span class="word">para</span> <span class="word">Niños</span> <span class="word">y</span></span>
+                        <span class="title-line"><span class="word">para</span> <span class="word hero-title-accent">Niños</span> <span class="word">y</span></span>
                         <span class="title-line"><span class="word">Estimulación</span> <span class="word">del</span> <span class="word">Lenguaje</span></span>
                     </h1>
                     <p class="hero-subtitle">Especialistas en <span class="highlight">Alemán</span>, Inglés, Portugués y
@@ -514,12 +513,30 @@
                     </div>
                     <div class="hero-buttons">
                         <a href="#contacto" class="btn btn-primary btn-large">Agendar Cita</a>
+                        <a href="#servicios" class="btn btn-secondary btn-large">Explorar programas <span aria-hidden="true">↓</span></a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/nina_estudiosa.webp"
-                        alt="Niña feliz y estudiosa aprendiendo en Kids Center Costa Rica" width="600" height="500"
-                        loading="eager">
+                    <div class="hero-collage">
+                        <figure class="hero-photo hero-photo--primary">
+                            <img src="images/teacher-2.webp"
+                                alt="Especialista de Kids Center acompañando a una niña durante una actividad" width="1080" height="1080"
+                                loading="eager">
+                        </figure>
+                        <figure class="hero-photo hero-photo--team">
+                            <img src="images/teacher_joha.webp" alt="Johana Soto, parte del equipo de Kids Center" width="1080" height="1080" loading="eager">
+                        </figure>
+                        <figure class="hero-photo hero-photo--space">
+                            <img src="images/espacio-3.webp" alt="Espacio de aprendizaje de Kids Center en San José" width="1080" height="808" loading="eager">
+                        </figure>
+                    </div>
+                    <div class="hero-tangram" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="hero-note">
+                        <span class="hero-note-icon" aria-hidden="true">✦</span>
+                        <span>Aprender se siente<br><strong>como jugar</strong></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -558,7 +575,8 @@
     <section class="modalidades" aria-labelledby="modalidades-title">
         <div class="container">
             <span class="section-eyebrow">Cómo aprendemos</span>
-            <h2 id="modalidades-title" class="section-title">Modalidades</h2>
+            <h2 id="modalidades-title" class="section-title">Aprender <em>a su manera</em></h2>
+            <p class="section-intro">Un acompañamiento flexible, cercano y pensado para que cada niño aprenda a su manera.</p>
             <div class="modalidades-grid">
                 <div class="modalidad-card">
                     <div class="modalidad-icon">
@@ -615,7 +633,8 @@
     <section class="services-preview" aria-labelledby="age-programs-title">
         <div class="container">
             <span class="section-eyebrow">Para cada etapa</span>
-            <h2 id="age-programs-title" class="section-title">Programas por Edad</h2>
+            <h2 id="age-programs-title" class="section-title">Cada etapa <em>tiene su magia</em></h2>
+            <p class="section-intro">Crecemos con ellos: objetivos, dinámicas y herramientas adaptadas a cada momento de su desarrollo.</p>
             <div class="age-cards">
                 <div class="age-card">
                     <div class="age-card-header">
@@ -677,7 +696,7 @@
     <section id="nosotros" class="about" aria-labelledby="about-title">
         <div class="container">
             <span class="section-eyebrow">Nuestra historia</span>
-            <h2 id="about-title" class="section-title">Quiénes Somos</h2>
+            <h2 id="about-title" class="section-title">El corazón de <em>Kids Center</em></h2>
             <div class="about-grid">
                 <div class="about-content">
                     <div class="about-logo-container">
@@ -701,9 +720,9 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="images/aula-educativa.webp"
-                        alt="Aula de Kids Center - Ambiente educativo para niños con materiales didácticos" width="500"
-                        height="400" loading="lazy">
+                    <img src="images/clase_grupal.webp"
+                        alt="Aula real de Kids Center preparada para clases grupales de idiomas" width="810"
+                        height="1080" loading="lazy">
                 </div>
             </div>
             <div class="stats-band">
@@ -731,9 +750,11 @@
     <main id="servicios" class="services" aria-labelledby="services-title">
         <div class="container">
             <span class="section-eyebrow">Lo que ofrecemos</span>
-            <h2 id="services-title" class="section-title">Nuestros Servicios</h2>
+            <h2 id="services-title" class="section-title">Un mundo para <em>aprender y crecer</em></h2>
+            <p class="section-intro">Idioma, comunicación y confianza: un enfoque integral que acompaña dentro y fuera del aula.</p>
             <div class="services-grid">
                 <div class="service-card">
+                    <span class="service-card-kicker">El favorito de las familias</span>
                     <div class="service-header service-header--pink">
                         <div class="service-icon">🌍</div>
                     </div>
@@ -791,46 +812,49 @@
     <section class="testimonials" aria-labelledby="testimonials-title">
         <div class="container">
             <span class="section-eyebrow">Familias felices</span>
-            <h2 id="testimonials-title" class="section-title">Lo Que Dicen Nuestros Padres</h2>
-            <div class="testimonials-carousel">
-                <div class="testimonial-card active">
-                    <div class="testimonial-content">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Mi hijo mejoró increíblemente en solo 3 meses. La terapeuta es muy profesional y el ambiente
-                            es perfecto para los niños. ¡100% recomendado!"</p>
-                        <div class="testimonial-author">
-                            <strong>María González</strong>
-                            <span>Mamá de Diego, 5 años</span>
+            <h2 id="testimonials-title" class="section-title">Pequeños avances, <em>grandes historias</em></h2>
+            <div class="testimonial-stage">
+                <div class="testimonial-scribble" aria-hidden="true"><strong>47+</strong><span>familias<br>acompañadas</span></div>
+                <div class="testimonials-carousel">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-content">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Mi hijo mejoró increíblemente en solo 3 meses. La terapeuta es muy profesional y el ambiente
+                                es perfecto para los niños. ¡100% recomendado!"</p>
+                            <div class="testimonial-author">
+                                <strong>María González</strong>
+                                <span>Mamá de Diego, 5 años</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"El progreso de mi hija ha sido notable. Ahora habla con más confianza y su vocabulario se ha
+                                expandido muchísimo. Estamos muy agradecidos."</p>
+                            <div class="testimonial-author">
+                                <strong>Carlos Rodríguez</strong>
+                                <span>Papá de Sofía, 4 años</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Excelente atención personalizada. Mi hijo ama venir a sus sesiones y hemos visto un cambio
+                                muy positivo en su comunicación."</p>
+                            <div class="testimonial-author">
+                                <strong>Ana Martínez</strong>
+                                <span>Mamá de Luis, 6 años</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"El progreso de mi hija ha sido notable. Ahora habla con más confianza y su vocabulario se ha
-                            expandido muchísimo. Estamos muy agradecidos."</p>
-                        <div class="testimonial-author">
-                            <strong>Carlos Rodríguez</strong>
-                            <span>Papá de Sofía, 4 años</span>
-                        </div>
-                    </div>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Excelente atención personalizada. Mi hijo ama venir a sus sesiones y hemos visto un cambio
-                            muy positivo en su comunicación."</p>
-                        <div class="testimonial-author">
-                            <strong>Ana Martínez</strong>
-                            <span>Mamá de Luis, 6 años</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-dots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-                <span class="dot" data-slide="2"></span>
             </div>
         </div>
     </section>
@@ -839,7 +863,7 @@
     <section class="conocenos" aria-labelledby="conocenos-title">
         <div class="container">
             <span class="section-eyebrow">El equipo y el espacio</span>
-            <h2 id="conocenos-title" class="section-title">Conócenos</h2>
+            <h2 id="conocenos-title" class="section-title">Personas reales, <em>espacios felices</em></h2>
 
             <!-- Team Sub-section -->
             <div class="conocenos-subsection">
@@ -961,7 +985,8 @@
     <section class="faq" aria-labelledby="faq-title">
         <div class="container">
             <span class="section-eyebrow">Resolvemos tus dudas</span>
-            <h2 id="faq-title" class="section-title">Preguntas Frecuentes</h2>
+            <h2 id="faq-title" class="section-title">Antes de <em>empezar</em></h2>
+            <p class="faq-intro">Todo lo importante, explicado con claridad. Si tu pregunta no está aquí, escribinos y la resolvemos juntos.</p>
             <div class="faq-grid">
                 <div class="faq-item">
                     <button class="faq-question active">
@@ -1035,7 +1060,8 @@
     <section id="contacto" class="contact" aria-labelledby="contact-title">
         <div class="container">
             <span class="section-eyebrow">Hablemos</span>
-            <h2 id="contact-title" class="section-title">Contacto</h2>
+            <h2 id="contact-title" class="section-title">Demos el <em>primer paso</em></h2>
+            <p class="contact-lead">Contanos qué necesita tu hijo. Te ayudamos a encontrar el acompañamiento ideal para su etapa.</p>
             <div class="contact-grid">
                 <div class="contact-form-container">
                     <h3>Agenda una cita</h3>
@@ -1073,6 +1099,7 @@
                 </div>
                 <div class="contact-info">
                     <h3>Información de contacto</h3>
+                    <a class="contact-whatsapp" href="https://wa.me/50688336528" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
                     <div class="info-item">
                         <div class="info-icon">📍</div>
                         <div>
@@ -1170,9 +1197,7 @@
         </svg>
     </button>
 
-    <script src="script.js?v=20260609" defer></script>
-    <script src="seo-monitor.js?v=20260319" defer></script>
-
+    <script src="script.js?v=20260711c" defer></script>
     <!-- Performance Monitoring -->
     <script>
         // Web Vitals monitoring

@@ -46,3 +46,11 @@
 
 | Time | Action | File(s) | Outcome | ~Tokens |
 |------|--------|---------|---------|--------|
+| 08:49 | designqc: captured 6 screenshots (217KB, ~15000 tok) | / | ready for eval | ~0 |
+| 08:53 | designqc: captured 6 screenshots (261KB, ~15000 tok) | / | ready for eval | ~0 |
+| 08:56 | designqc: captured 6 screenshots (304KB, ~15000 tok) | / | ready for eval | ~0 |
+| 08:57 | Redesigned landing page and verified desktop/mobile rendering, motion, and console health | index.html, styles.css, script.js | language-garden visual system complete; 0 browser console errors | ~18000 |
+| 09:01 | designqc: captured 6 screenshots (303KB, ~15000 tok) | / | ready for eval | ~0 |
+| 09:14 | designqc: captured 6 screenshots (309KB, ~15000 tok) | / | ready for eval | ~0 |
+| 09:24 | designqc: captured 6 screenshots (325KB, ~15000 tok) | / | ready for eval | ~0 |
+| 09:25 | Completed bold tangram-led second design pass and verified desktop/mobile/browser console | index.html, styles.css | real imagery, asymmetric editorial layouts, bento services, testimonial stage, 5-person team wall; 0 console errors | ~24000 |

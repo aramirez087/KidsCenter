@@ -108,6 +108,10 @@ StyleCopReport.xml
 *.tlog
 *.vspscc
 *.vssscc
+
+# Local Codex / agent workspace metadata
+.codex/
+AGENTS.md
 .builds
 *.pidb
 *.svclog

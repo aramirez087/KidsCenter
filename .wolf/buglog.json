@@ -76,6 +76,78 @@
       "related_bugs": [],
       "occurrences": 1,
       "last_seen": "2026-06-09T00:00:00.000Z"
+    },
+    {
+      "id": "bug-006",
+      "timestamp": "2026-07-11T08:49:00-06:00",
+      "error_message": "No dev script found in package.json; Could not start dev server",
+      "file": ".wolf/designqc-captures",
+      "root_cause": "OpenWolf designqc auto-start expects a package script, but KidsCenter is a dependency-free static site with no package.json",
+      "fix": "Started python3 -m http.server 8000 manually and reran designqc with --url http://127.0.0.1:8000",
+      "tags": ["openwolf", "designqc", "static-site", "dev-server"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-11T08:49:00-06:00"
+    },
+    {
+      "id": "bug-007",
+      "timestamp": "2026-07-11T08:55:00-06:00",
+      "error_message": "404 seo-monitor.js; Uncaught ReferenceError: module is not defined in lenis.min.js",
+      "file": "index.html",
+      "root_cause": "The page referenced a nonexistent local monitoring script and a Lenis CDN artifact that was not browser-compatible as a classic script",
+      "fix": "Removed both stale script tags; the existing native smooth-scroll fallback now handles anchor navigation while GSAP continues to power visual motion",
+      "tags": ["browser-console", "404", "lenis", "cdn", "javascript"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-11T08:56:00-06:00"
+    },
+    {
+      "id": "bug-008",
+      "timestamp": "2026-07-11T08:55:00-06:00",
+      "error_message": "SyntaxError: Unexpected identifier 'page'",
+      "file": "Playwright CLI verification command",
+      "root_cause": "The CLI run-code command was given a raw await expression in a form the wrapper did not accept",
+      "fix": "Removed the unnecessary custom wait and used the CLI screenshot command directly for viewport verification",
+      "tags": ["playwright", "verification", "cli"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-11T08:55:00-06:00"
+    },
+    {
+      "id": "bug-009",
+      "timestamp": "2026-07-11T08:54:00-06:00",
+      "error_message": "Later cards in staggered reveal appeared nearly invisible during design capture",
+      "file": "script.js",
+      "root_cause": "The card entrance animation began every item at opacity 0 and used a long stagger, leaving most of a grid faint during quick scrolling and automated captures",
+      "fix": "Kept cards fully opaque and shortened the position/scale stagger while disabling reverse-on-scroll",
+      "tags": ["gsap", "animation", "visibility", "design-qc"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-11T08:54:00-06:00"
+    },
+    {
+      "id": "bug-010",
+      "timestamp": "2026-07-11T09:18:00-06:00",
+      "error_message": "Hero collage collapsed to a 10px-wide sliver on the 390px mobile viewport",
+      "file": "styles.css",
+      "root_cause": "All collage photos were absolutely positioned, so the centered hero grid item had no intrinsic width on mobile",
+      "fix": "Set width: 100% on .hero-image and .hero-collage, then strengthened the photo crop selector specificity",
+      "tags": ["responsive", "css-grid", "absolute-position", "hero", "mobile"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-11T09:19:00-06:00"
+    },
+    {
+      "id": "bug-011",
+      "timestamp": "2026-07-11T09:21:00-06:00",
+      "error_message": "Unknown options: --0, --2, --8",
+      "file": "Playwright CLI verification command",
+      "root_cause": "A negative mousewheel delta was parsed as CLI options",
+      "fix": "Used explicit PageUp/PageDown key commands for backward viewport navigation",
+      "tags": ["playwright", "cli", "verification", "scroll"],
+      "related_bugs": ["bug-008"],
+      "occurrences": 1,
+      "last_seen": "2026-07-11T09:21:00-06:00"
     }
   ]
 }

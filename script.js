@@ -368,16 +368,16 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             if (elements.length > 0) {
                 const parent = elements[0].parentElement;
                 gsap.fromTo(elements,
-                    { y: 50, opacity: 0, scale: 0.95 },
+                    { y: 32, opacity: 1, scale: 0.98 },
                     {
                         y: 0, opacity: 1, scale: 1,
-                        duration: 0.8,
-                        stagger: 0.1,
-                        ease: "back.out(1.2)",
+                        duration: 0.6,
+                        stagger: 0.06,
+                        ease: "power3.out",
                         scrollTrigger: {
                             trigger: parent,
-                            start: "top 80%",
-                            toggleActions: "play none none reverse"
+                            start: "top 88%",
+                            toggleActions: "play none none none"
                         }
                     }
                 );
