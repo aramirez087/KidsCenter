@@ -16,6 +16,7 @@
 - **Description:** Sitio web para Kids Center, un centro especializado en terapia de lenguaje, enseñanza de idiomas y refuerzo académico para niños en Costa Rica.
 - **Design direction (2026-06-09):** "Warm storybook editorial" — cream base (#FAF6F1), DM Serif Display + Nunito, green/pink/blue brand accents, organic blob shapes, greeting stickers + marquee in the 4 taught languages (Hallo/Hello/Olá/¡Hola). Stay on this aesthetic for future UI work.
 - **Design evolution (2026-07-11):** Extended the storybook direction into a "language garden" system: paper-cut greeting stickers, yellow highlight strokes, restrained dotted/grid textures, a navy age-program chapter, and alternating atmospheric section backgrounds. Preserve the adult-trust/child-delight balance in future edits.
+- **Accessible palette roles (2026-07-11):** Use forest `#2F7D43` for text, links, and actions on cream/white; reserve bright green `#59C36A` for accents on navy. Supporting semantic accents are coral `#C24760`, blue `#35769B`, and violet `#6656A8`; secondary/tertiary copy uses `#5F6073`/`#6C6D80`. Keep this light-surface/dark-surface role split intact.
 - **Ownable visual asset (2026-07-11):** The multicolor triangle/tangram border embedded in the original logo and teacher graphics is Kids Center's strongest distinctive motif. Reuse that geometry before generic blobs or circles, and prioritize real team/space imagery over stock classroom scenes.
 - Cache busting: bump `?v=YYYYMMDD` on styles.css/script.js references in index.html (4 spots: 2 preloads, 1 link, 1 script) whenever those files change.
 - GSAP stagger reveals write inline `transform`; use the independent CSS `rotate`/`translate` properties for persistent decorative tilts (e.g. team polaroids) so GSAP can't clobber them.
@@ -30,9 +31,11 @@
 - [2026-06-09] GSAP cannot tween pseudo-elements (`gsap.to('.hero::before')` is a silent no-op). Use real decorative divs for anything GSAP must animate.
 - [2026-07-11] Do not add scroll-reveal opacity stagger to entire card grids; it makes later cards look missing in screenshots and during quick scrolling. Keep cards opaque and animate position/scale only.
 - [2026-07-11] An absolutely positioned image collage has no intrinsic width on a centered mobile grid item. Set an explicit `width: 100%` on both the collage wrapper and its parent before positioning the child photos.
+- [2026-07-11] Do not use one bright brand green for both light-canvas text and dark-surface accents. Maintain separate accessible semantic and luminous accent tokens.
 
 ## Decision Log
 
 <!-- Significant technical decisions with rationale. Why X was chosen over Y. -->
 
 - **2026-07-11 — Brand-owned second pass:** Replaced the generic stock hero with a real staff/space collage, introduced animated tangram pieces, changed repeated grids into editorial split/bento/journey layouts, and used the original branded teacher graphics as a five-person portrait wall.
+- **2026-07-11 — Contrast-safe dual-green palette:** Chose a darker forest green for readable UI on cream and a separate bright green for navy sections, then deepened coral/blue/violet supporting accents so the expressive palette remains consistent while key text and controls meet WCAG AA.

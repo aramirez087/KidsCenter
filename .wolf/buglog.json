@@ -148,6 +148,18 @@
       "related_bugs": ["bug-008"],
       "occurrences": 1,
       "last_seen": "2026-07-11T09:21:00-06:00"
+    },
+    {
+      "id": "bug-012",
+      "timestamp": "2026-07-11T10:13:00-06:00",
+      "error_message": "Core brand green and supporting accent/text colors failed WCAG AA contrast on light surfaces",
+      "file": "styles.css",
+      "root_cause": "A single bright green token was used for both light-canvas text/actions and dark-surface accents; pink, blue, and tertiary gray were also tuned decoratively without minimum contrast targets",
+      "fix": "Split the palette into an accessible forest green for light surfaces and a bright green for navy surfaces, deepened the coral/blue/violet and neutral text tokens, repaired translucent marquee/footer text, and aligned browser theme metadata",
+      "tags": ["accessibility", "wcag", "color-contrast", "design-system"],
+      "related_bugs": [],
+      "occurrences": 1,
+      "last_seen": "2026-07-11T10:13:00-06:00"
     }
   ]
 }
